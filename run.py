@@ -9,14 +9,14 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/about")
+@app.route("/teams")
 def about():
-    return render_template("about.html")
+    return render_template("teams.html")
 
 
-@app.route("/contact")
+@app.route("/results")
 def contact():
-    return render_template("contact.html")
+    return render_template("results.html")
 
 
 if __name__ == "__main__":
