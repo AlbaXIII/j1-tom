@@ -10,13 +10,18 @@ def index():
 
 
 @app.route("/teams")
-def about():
+def teams():
     return render_template("teams.html")
 
 
 @app.route("/results")
-def contact():
+def results():
     return render_template("results.html")
+
+
+@app.route("/standings")
+def standings():
+    return render_template("standings.html")
 
 
 if __name__ == "__main__":
