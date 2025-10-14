@@ -1,3 +1,23 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #F54642 !important;
+}
+
+nav {
+    width: 100%;
+}
+
+.content-wrapper {
+    width: 800px;
+    max-width: 100%; 
+    padding: 20px;
+    background-color: white;
+}
+
 h1 {
     font-family: 'Dela Gothic One', sans-serif;
     font-weight: 100;
@@ -5,4 +25,13 @@ h1 {
 
 nav {
     font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.footer {
+    font-family: 'Libre Baskerville', sans-serif;
+    text-decoration: none;
+}
+
+.github-logo {
+    color: #fff;
 }
