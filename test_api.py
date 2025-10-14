@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Replace with your actual API key
+
 API_KEY = os.getenv("API_SPORTS_KEY")
 
 url = 'https://v3.football.api-sports.io/status'

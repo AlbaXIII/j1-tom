@@ -2,4 +2,50 @@
 {% block content %}
     <h1>League Table</h1>
     <h2>リーグテーブル</h2>
+
+    {% if standings %}
+        <div class="table-container">
+        <table class="league-table">
+            <thead>
+                <tr>
+                    <th class="rank">Pos</th>
+                    <th>Team</th>
+                    <th class="stats">P</th>
+                    <th class="stats">W</th>
+                    <th class="stats">D</th>
+                    <th class="stats">L</th>
+                    <th class="stats">GF</th>
+                    <th class="stats">GA</th>
+                    <th class="stats">GD</th>
+                    <th class="points">Pts</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team in standings %}
+                <tr>
+                    <td class="rank">{{ team.rank }}</td>
+                    <td>
+                        <div class="team">
+                            <img src="{{ team.team.logo }}" alt="{{ team.team.name }}" class="team-logo">
+                            <span>{{ team.team.name }}</span>
+                        </div>
+                    </td>
+                    <td class="stats">{{ team.all.played }}</td>
+                    <td class="stats">{{ team.all.win }}</td>
+                    <td class="stats">{{ team.all.draw }}</td>
+                    <td class="stats">{{ team.all.lose }}</td>
+                    <td class="stats">{{ team.all.goals.for }}</td>
+                    <td class="stats">{{ team.all.goals.against }}</td>
+                    <td class="stats">{{ team.goalsDiff }}</td>
+                    <td class="points">{{ team.points }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p class="error-message">Unable to load standings data. Please try again later.</p>
+    {% endif %}
+
+
 {% endblock %}
