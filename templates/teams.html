@@ -2,4 +2,9 @@
 {% block content %}
     <h1>Teams</h1>
     <h2>サッカーチーム</h2>
+    
+    {% for team in teams %}
+        <p>{{ team.name }}</p>
+    {% endfor %}
+    
 {% endblock %}

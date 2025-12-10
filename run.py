@@ -1,5 +1,6 @@
 import os
 import requests
+import json
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -33,7 +34,16 @@ def index():
 
 @app.route("/teams")
 def teams():
-    return render_template("teams.html")
+    try:
+        with open("data/teams.json", "r", encoding="utf-8") as json_data:
+            teams = json.load(json_data)
+    except FileNotFoundError:
+        teams = []
+        print("Warning: data/teams.json not found")
+    except json.JSONDecodeError:
+        teams = []
+        print("Warning: Invalid JSON in teams.json")
+    return render_template("teams.html", teams=teams)
 
 
 @app.route("/results")
