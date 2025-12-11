@@ -4,7 +4,11 @@
     <h2>サッカーチーム</h2>
     
     {% for team in teams %}
-        <p>{{ team.name }}</p>
+        <div class="team-item">
+            <a href="{{ url_for('team_detail', team_id=team.team_id) }}">
+                {{ team.name }}
+            </a>
+        </div>
     {% endfor %}
     
 {% endblock %}
