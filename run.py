@@ -32,6 +32,11 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
 @app.route("/teams")
 def teams():
     try:
@@ -45,22 +50,24 @@ def teams():
         print("Warning: Invalid JSON in teams.json")
     return render_template("teams.html", teams=teams)
 
+
 @app.route("/team/<int:team_id>")
 def team_detail(team_id):
     import json
-    
+
     try:
         with open("data/teams.json", "r", encoding="utf-8") as json_data:
             teams = json.load(json_data)
-        
+
         team = next((t for t in teams if int(t['team_id']) == team_id), None)
-        
+
         if team:
             return render_template("team_detail.html", team=team)
         else:
             return "Team not found", 404
     except FileNotFoundError:
         return "Teams data not found", 404
+
 
 @app.route("/results")
 def results():
