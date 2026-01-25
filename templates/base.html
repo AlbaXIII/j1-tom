@@ -17,44 +17,57 @@
         <title>J1-TOM</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a href="{{ url_for('teams') }}">Teams</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url_for('results') }}">Results</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url_for('standings') }}">Standings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url_for('about') }}">About</a>
-                        </li>
-                    </ul>
-                    <span class="navbar-text">
-                        J1 League, Simplified
-                    </span>
-                </div>
-            </div>
-        </nav>
+    <button class="mobile-toggle" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <div class="overlay" onclick="toggleSidebar()"></div>
 
-        <div class="content-wrapper">
-            {% block content %}
-            {% endblock %}
+    <nav class="sidebar" id="sidebar">
+        <ul class="sidebar-nav">
+            <li>
+                <a href="{{ url_for('index') }}">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('teams') }}">
+                    <span>Teams</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('results') }}">
+                    <span>Results</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('standings') }}">
+                    <span>Standings</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('about') }}">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <p>© AlbaDev 2025
+                <a target="_blank" href="https://github.com/AlbaXIII" aria-label="developer github user profile">
+                        <i class="fab fa-github"></i>
+                </a>
+            </p>
         </div>
 
-        <footer class="footer mt-auto py-3 bg-dark">
-        <p class="m-0 text-center text-white">Copyright AlbaDev 2025
-            <a class="github-logo" target="_blank" href="https://github.com/AlbaXIII" aria-label="developer github user profile"><i class="fab fa-github"></i></a>
-        </p>
-        </footer>
 
+    </nav>
+
+        <div class="main-wrapper"></div>
+            <div class="content-wrapper">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
     </body>
 </html>
