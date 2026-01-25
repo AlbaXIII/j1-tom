@@ -17,59 +17,59 @@
         <title>J1-TOM</title>
     </head>
     <body>
-    <button class="mobile-toggle" onclick="toggleSidebar()">
-        <i class="fas fa-bars"></i>
-    </button>
-    
-    <div class="overlay" onclick="toggleSidebar()"></div>
+        <button class="mobile-toggle" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="overlay" onclick="toggleSidebar()"></div>
 
-    <nav class="sidebar" id="sidebar">
-        <ul class="sidebar-nav">
-            <li>
-                <a href="{{ url_for('index') }}">
-                    <span>Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url_for('teams') }}">
-                    <span>Teams</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url_for('results') }}">
-                    <span>Results</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url_for('standings') }}">
-                    <span>Standings</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url_for('about') }}">
-                    <span>About</span>
-                </a>
-            </li>
-        </ul>
+        <nav class="sidebar" id="sidebar">
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="{{ url_for('index') }}">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('teams') }}">
+                        <span>Teams</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('results') }}">
+                        <span>Results</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('standings') }}">
+                        <span>Standings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('about') }}">
+                        <span>About</span>
+                    </a>
+                </li>
+            </ul>
 
-        <div class="sidebar-footer">
-            <p>© AlbaDev 2025
-                <a target="_blank" href="https://github.com/AlbaXIII" aria-label="developer github user profile">
-                        <i class="fab fa-github"></i>
-                </a>
-            </p>
-        </div>
-
-
-    </nav>
-
-        <div class="main-wrapper"></div>
-            <div class="content-wrapper">
-                {% block content %}
-                {% endblock %}
+            <div class="sidebar-footer">
+                <p>© AlbaDev 2025
+                    <a target="_blank" href="https://github.com/AlbaXIII" aria-label="developer github user profile">
+                            <i class="fab fa-github"></i>
+                    </a>
+                </p>
             </div>
-        </div>
 
-        <script src="../static/js/script.js"></script>
+
+        </nav>
+
+            <div class="main-wrapper"></div>
+                <div class="content-wrapper">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+
+            <script src="../static/js/script.js"></script>
     </body>
 </html>
