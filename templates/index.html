@@ -7,19 +7,27 @@
             <h3>ホームページ</h3>
     </div>
     {% if fixtures %}
-        {% for round_name, matches in fixtures.items() %}
         <div>
+            <label for="matchday-select">Select Matchday:</label>
+            <select id="matchday-select">
+                {% for round_name in fixtures.keys() %}
+                <option value="{{ loop.index0 }}">{{ round_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        {% for round_name, matches in fixtures.items() %}
+        <div class="matchday-section" data-matchday="{{ loop.index0 }}">
             <h3>{{ round_name }}</h3>
             
             <div>
                 {% for match in matches %}
                 <div>
-                    
+
                     <div>
                         <img src="{{ match.teams.home.logo }}" alt="{{ match.teams.home.name }}">
-                        <span class="f5">{{ match.teams.home.name }}</span>
+                        <span>{{ match.teams.home.name }}</span>
                     </div>
-                    
                     
                     <div>
                         {% if match.fixture.status.short == 'FT' %}
@@ -36,7 +44,6 @@
                         {% endif %}
                     </div>
                     
-                    
                     <div>
                         <span>{{ match.teams.away.name }}</span>
                         <img src="{{ match.teams.away.logo }}" alt="{{ match.teams.away.name }}">
@@ -46,7 +53,7 @@
             </div>
         </div>
         {% endfor %}
-     {% else %}
-        <p>No fixtures available for the 2026 season yet.</p>
+    {% else %}
+        <p>No fixtures available for the 2025 season yet.</p>
     {% endif %}
 {% endblock %}

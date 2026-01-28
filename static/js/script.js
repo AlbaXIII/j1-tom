@@ -12,3 +12,21 @@ if (window.innerWidth <= 768) {
     });
   });
 }
+
+const selector = document.getElementById("matchday-select");
+const matchdays = document.querySelectorAll(".matchday-section");
+
+selector.addEventListener("change", function () {
+  const selectedIndex = this.value;
+
+  matchdays.forEach((matchday) => {
+    matchday.style.display = "none";
+  });
+
+  const selectedMatchday = document.querySelector(
+    `[data-matchday="${selectedIndex}"]`,
+  );
+  if (selectedMatchday) {
+    selectedMatchday.style.display = "block";
+  }
+});

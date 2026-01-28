@@ -1,45 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="team-detail">
+    <div>
         <h1>{{ team.name }}</h1>
         <h2>{{ team.nickname }}</h2>
 
-        <div class="team-info">
-            <div class="info-section">
+        <div>
+            <div>
                 <h3>Stadium</h3>
                 <p>{{ team.ground }}</p>
             </div>
 
-            <div class="info-section">
+            <div>
                 <h3>Manager</h3>
                 <p>{{ team.manager }}</p>
             </div>
 
-            <div class="info-section">
+            <div>
                 <h3>Captain</h3>
                 <p>{{ team.captain }}</p>
             </div>
 
-            <div class="info-section">
+            <div>
                 <h3>Key Player</h3>
                 <p>{{ team.key_player }}</p>
             </div>
 
-            <div class="info-section">
+            <div>
                 <h3>Famous Face</h3>
                 <p>{{ team.famous_face }}</p>
             </div>
 
-            <div class="info-section">
+            <div>
                 <h3>Current J1 Seasons</h3>
                 <p>{{ team.current_j1_seasons }}</p>
             </div>
         </div>
 
-        <div class="trophies">
+        <div>
             <h3>Honours</h3>
-            <div class="trophy-list">
-                <div class="trophy-item">
+            <div>
+                <div>
                     <strong>League Titles:</strong> 
                     {% if team.league_titles != "0" %}
                         {{ team.league_titles }}
@@ -47,7 +47,7 @@
                         None
                     {% endif %}
                 </div>
-                <div class="trophy-item">
+                <div>
                     <strong>Emperor's Cups:</strong> 
                     {% if team.emperors_cups != "0" %}
                         {{ team.emperors_cups }}
@@ -55,7 +55,7 @@
                         None
                     {% endif %}
                 </div>
-                <div class="trophy-item">
+                <div>
                     <strong>J.League Cups:</strong> 
                     {% if team.j_league_cups != "0" %}
                         {{ team.j_league_cups }}
@@ -67,7 +67,7 @@
         </div>
 
         {% if team.video_url %}
-        <div class="video-section">
+        <div>
             <h3>Team Video</h3>
             <iframe width="560" height="315" 
                     src="{{ team.video_url.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0] }}" 
@@ -78,7 +78,7 @@
         </div>
         {% endif %}
 
-        <a href="{{ url_for('teams') }}" class="back-link">← Back to Teams</a>
+        <a href="{{ url_for('teams') }}">← Back to Teams</a>
     </div>
 
 {% endblock %}
