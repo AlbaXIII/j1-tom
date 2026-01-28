@@ -1,21 +1,6 @@
 [
   {
     "team_id": "1",
-    "name": "Albirex Niigata",
-    "nickname": "Albi",
-    "ground": "Denka Big Swan Stadium",
-    "league_titles": "0",
-    "emperors_cups": "0",
-    "j_league_cups": "0",
-    "manager": "Toru Irie",
-    "captain": "Yuto Horigome, DF",
-    "key_player": "Danilo Gomes, MF",
-    "famous_face": "Ryotaro Ito (Sint-Truiden)",
-    "current_j1_seasons": "3",
-    "video_url": "https://youtu.be/s5b-fiFo4eM?si=AZW6vZBIVv4tuzwP"
-  },
-  {
-    "team_id": "2",
     "name": "Avispa Fukuoka",
     "nickname": "Hachi",
     "ground": "Best Denki Stadium ",
@@ -30,7 +15,7 @@
     "video_url": "https://youtu.be/uVf64rjPsi0?si=kvurlGLuhcI4janD"
   },
   {
-    "team_id": "3",
+    "team_id": "2",
     "name": "Cerezo Osaka",
     "nickname": "Sakura",
     "ground": "Yodoko Sakura Stadium",
@@ -45,7 +30,7 @@
     "video_url": "https://youtu.be/Fs1vRkp_RAA?si=NDWXvHTtHFOr9evQ"
   },
   {
-    "team_id": "4",
+    "team_id": "3",
     "name": "Fagiano Okayama",
     "nickname": "Fagi",
     "ground": "City Light Stadium",
@@ -60,7 +45,7 @@
     "video_url": "https://youtu.be/J2fUyE4aEAs?si=Y1UUhIF0tivcIOFu"
   },
   {
-    "team_id": "5",
+    "team_id": "4",
     "name": "Gamba Osaka",
     "nickname": "Nerazzurri",
     "ground": "Panasonic Stadium Suita",
@@ -72,6 +57,21 @@
     "key_player": "Deniz Hummet, FW",
     "famous_face": "Ritsu Dōan (Eintracht Frankfurt)",
     "current_j1_seasons": "13",
+    "video_url": "https://youtu.be/pr-n6nBN9cg?si=KdE7muRvLnLTYCQM"
+  },
+  {
+    "team_id": "5",
+    "name": "JEF United Chiba",
+    "nickname": "JEF, Inu (Dogs)",
+    "ground": "Fukuda Denshi Arena",
+    "league_titles": "0",
+    "emperors_cups": "0",
+    "j_league_cups": "2005, 2016",
+    "manager": "Yoshiyuki Kobayashi",
+    "captain": "Daisuke Suzuki, DF",
+    "key_player": "Daichi Ishikawa, FW",
+    "famous_face": "Ado Onaiwu (1. FC Magdeburg)",
+    "current_j1_seasons": "1",
     "video_url": "https://youtu.be/pr-n6nBN9cg?si=KdE7muRvLnLTYCQM"
   },
   {
@@ -151,6 +151,21 @@
   },
   {
     "team_id": "11",
+    "name": "Mito Hollyhock",
+    "nickname": "Hollyhock, Mitochan",
+    "ground": "K's denki Stadium Mito",
+    "league_titles": "0",
+    "emperors_cups": "0",
+    "j_league_cups": "0",
+    "manager": "Daisuke Kimori",
+    "captain": "",
+    "key_player": "Arata Wantanabe, FW",
+    "famous_face": "Koki Ogawa (NEC Nijmegen)",
+    "current_j1_seasons": "1",
+    "video_url": "N/A"
+  },
+  {
+    "team_id": "12",
     "name": "Nagoya Grampus",
     "nickname": "Grampus",
     "ground": "Toyota Stadium",
@@ -165,7 +180,7 @@
     "video_url": "https://youtu.be/aCATZx8K57E?si=C3t3BIwn2YTE9C-F"
   },
   {
-    "team_id": "12",
+    "team_id": "13",
     "name": "Sanfrecce Hiroshima",
     "nickname": "Sanfre",
     "ground": "Edion Peace Wing Hiroshima",
@@ -180,7 +195,7 @@
     "video_url": "https://youtu.be/yVVGUBJ0NKk?si=J8yzs4pwYbITwq3n"
   },
   {
-    "team_id": "13",
+    "team_id": "14",
     "name": "Shimizu S-Pulse",
     "nickname": "S-Pa",
     "ground": "IAI Stadium Nihondaira",
@@ -193,21 +208,6 @@
     "famous_face": "Yuito Suzuki (SC Freiburg)",
     "current_j1_seasons": "1",
     "video_url": "https://youtu.be/txanTKRQXmI?si=f2hcF2PWZwHTUr4_"
-  },
-  {
-    "team_id": "14",
-    "name": "Shonen Bellmare",
-    "nickname": "",
-    "ground": "Lemon Gas Stadium Hiratsuka",
-    "league_titles": "0",
-    "emperors_cups": "1994",
-    "j_league_cups": "2018",
-    "manager": "Satoshi Yamaguchi",
-    "captain": "Aito Suzuki, FW",
-    "key_player": "Sena Ishibashi, FW",
-    "famous_face": "Shūto Machino (Borussia Mönchengladbach)",
-    "current_j1_seasons": "8",
-    "video_url": "https://youtu.be/QNre3_J_gtk?si=dMjdSXNb2CW-wopS"
   },
   {
     "team_id": "15",
@@ -256,6 +256,21 @@
   },
   {
     "team_id": "18",
+    "name": "V-Varen Nagasaki",
+    "nickname": "VVN",
+    "ground": "Peace Stadium Connected by SoftBank",
+    "league_titles": "0",
+    "emperors_cups": "0",
+    "j_league_cups": "0",
+    "manager": "Takuya Tagaki",
+    "captain": "Hotaru Yamaguchi, DF",
+    "key_player": "Matheus Jesus, MF",
+    "famous_face": "Seiya Maikuma, (AZ Alkmaar)",
+    "current_j1_seasons": "1",
+    "video_url": "N/A"
+  },
+  {
+    "team_id": "19",
     "name": "Vissel Kobe",
     "nickname": "Ushi (Cows)",
     "ground": "Noevir Stadium Kobe",
@@ -268,21 +283,6 @@
     "famous_face": "Kyōgo Furuhashi, (Birmingham City)",
     "current_j1_seasons": "11",
     "video_url": "https://youtu.be/L1kB57no-Pc?si=lp7ISxSq5246XQ1u"
-  },
-  {
-    "team_id": "19",
-    "name": "Yokohama FC",
-    "nickname": "Fulie",
-    "ground": "NHK Spring Mitsuzawa Football Stadium",
-    "league_titles": "0",
-    "emperors_cups": "0",
-    "j_league_cups": "0",
-    "manager": "Fumitake Miura",
-    "captain": "Yoshiaki Komai, MF",
-    "key_player": "Solomon Sakuragawa, FW",
-    "famous_face": "Kōki Ogawa (NEC Nijmegen)",
-    "current_j1_seasons": "1",
-    "video_url": "https://youtu.be/KiM3EDm092Q?si=VfR3UTfFyFIqZgnD"
   },
   {
     "team_id": "20",
