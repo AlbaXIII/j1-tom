@@ -7,7 +7,7 @@ app = Flask(__name__)
 API_KEY = os.getenv("API_SPORTS_KEY")
 
 
-def get_standings(league_id, season=2023):
+def get_standings(league_id, season=2026):
     """Fetch standings from API-Sports"""
     url = 'https://v3.football.api-sports.io/standings'
     headers = {'x-apisports-key': API_KEY}
@@ -76,7 +76,7 @@ def results():
 
 @app.route("/standings")
 def standings():
-    standings_data = get_standings(98, season=2023)
+    standings_data = get_standings(98, season=2026)
     return render_template("standings.html", standings=standings_data)
 
 
