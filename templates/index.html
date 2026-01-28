@@ -3,7 +3,50 @@
     <div class="sidebar-brand">
             <h1>J1-TOM</h1>
             <p>Japanese Football, simplified.</p>
-            <h2>Home</h2>
+            <h2>Match Centre</h2>
             <h3>ホームページ</h3>
     </div>
+    {% if fixtures %}
+        {% for round_name, matches in fixtures.items() %}
+        <div>
+            <h3>{{ round_name }}</h3>
+            
+            <div>
+                {% for match in matches %}
+                <div>
+                    
+                    <div>
+                        <img src="{{ match.teams.home.logo }}" alt="{{ match.teams.home.name }}">
+                        <span class="f5">{{ match.teams.home.name }}</span>
+                    </div>
+                    
+                    
+                    <div>
+                        {% if match.fixture.status.short == 'FT' %}
+                            <span>{{ match.goals.home }} - {{ match.goals.away }}</span>
+                            <div>Full Time</div>
+                        {% elif match.fixture.status.short == 'NS' %}
+                            <span>vs</span>
+                            <div>{{ match.fixture.date[:10] }}</div>
+                        {% elif match.fixture.status.short in ['1H', '2H', 'HT'] %}
+                            <span>{{ match.goals.home }} - {{ match.goals.away }}</span>
+                            <div>LIVE - {{ match.fixture.status.elapsed }}'</div>
+                        {% else %}
+                            <span>{{ match.fixture.status.long }}</span>
+                        {% endif %}
+                    </div>
+                    
+                    
+                    <div>
+                        <span>{{ match.teams.away.name }}</span>
+                        <img src="{{ match.teams.away.logo }}" alt="{{ match.teams.away.name }}">
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+     {% else %}
+        <p>No fixtures available for the 2026 season yet.</p>
+    {% endif %}
 {% endblock %}

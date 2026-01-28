@@ -7,7 +7,34 @@ app = Flask(__name__)
 API_KEY = os.getenv("API_SPORTS_KEY")
 
 
-def get_standings(league_id, season=2026):
+def get_fixtures(league_id, season=2026):
+    """Fetch fixtures from API-Sports"""
+    url = 'https://v3.football.api-sports.io/fixtures'
+    headers = {'x-apisports-key': API_KEY}
+    params = {'league': league_id, 'season': season}
+
+    try:
+        response = requests.get(url, headers=headers, params=params)
+        data = response.json()
+
+        print(f"Fixtures API Response: {data}")
+
+        if data['response']:
+            fixtures_by_round = {}
+            for fixture in data['response']:
+                round_name = fixture['league']['round']
+                if round_name not in fixtures_by_round:
+                    fixtures_by_round[round_name] = []
+                fixtures_by_round[round_name].append(fixture)
+
+            return fixtures_by_round
+        return None
+    except Exception as e:
+        print(f"Error fetching fixtures: {e}")
+        return None
+
+
+def get_standings(league_id, season=2025):
     """Fetch standings from API-Sports"""
     url = 'https://v3.football.api-sports.io/standings'
     headers = {'x-apisports-key': API_KEY}
@@ -29,7 +56,22 @@ def get_standings(league_id, season=2026):
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    import json
+
+    try:
+        with open("data/teams.json", "r", encoding="utf-8") as json_data:
+            teams = json.load(json_data)
+    except FileNotFoundError:
+        teams = []
+        print("Warning: data/teams.json not found")
+    except json.JSONDecodeError:
+        teams = []
+        print("Warning: Invalid JSON in teams.json")
+
+    fixtures_by_round = get_fixtures(98, season=2026)
+
+    return render_template("index.html", teams=teams,
+                           fixtures=fixtures_by_round)
 
 
 @app.route("/about")
@@ -76,7 +118,7 @@ def results():
 
 @app.route("/standings")
 def standings():
-    standings_data = get_standings(98, season=2026)
+    standings_data = get_standings(98, season=2025)
     return render_template("standings.html", standings=standings_data)
 
 
