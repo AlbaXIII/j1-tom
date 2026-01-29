@@ -34,7 +34,7 @@ def get_fixtures(league_id, season=2026):
         return None
 
 
-def get_standings(league_id, season=2025):
+def get_standings(league_id, season=2026):
     """Fetch standings from API-Sports"""
     url = 'https://v3.football.api-sports.io/standings'
     headers = {'x-apisports-key': API_KEY}
@@ -118,7 +118,7 @@ def results():
 
 @app.route("/standings")
 def standings():
-    standings_data = get_standings(98, season=2025)
+    standings_data = get_standings(98, season=2026)
     return render_template("standings.html", standings=standings_data)
 
 
