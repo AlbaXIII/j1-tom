@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Teams</h1>
-    <h2>サッカーチーム</h2>
-    
+    <div class="teams-header">
+        <h1>Teams</h1>
+        <h2>チーム</h2>
+    </div>
+    <br>
     {% for team in teams %}
         <div class="team-item">
             <a href="{{ url_for('team_detail', team_id=team.team_id) }}">
