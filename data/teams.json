@@ -2,6 +2,7 @@
   {
     "team_id": "1",
     "name": "Avispa Fukuoka",
+    "badge": "static/img/badge/Avispa_Fukuoka_logo.png",
     "nickname": "Hachi",
     "ground": "Best Denki Stadium ",
     "league_titles": "0",
@@ -17,6 +18,7 @@
   {
     "team_id": "2",
     "name": "Cerezo Osaka",
+    "badge": "static/img/badge/Cerezo_Osaka_logo.png",
     "nickname": "Sakura",
     "ground": "Yodoko Sakura Stadium",
     "league_titles": "0",
@@ -32,6 +34,7 @@
   {
     "team_id": "3",
     "name": "Fagiano Okayama",
+    "badge": "static/img/badge/Fagiano_Okayama_logo.png",
     "nickname": "Fagi",
     "ground": "City Light Stadium",
     "league_titles": "0",
@@ -47,6 +50,7 @@
   {
     "team_id": "4",
     "name": "Gamba Osaka",
+    "badge": "static/img/badge/Gamba_Osaka_logo.png",
     "nickname": "Nerazzurri",
     "ground": "Panasonic Stadium Suita",
     "league_titles": "2005, 2014",
@@ -62,6 +66,7 @@
   {
     "team_id": "5",
     "name": "JEF United Chiba",
+    "badge": "static/img/badge/JEF_United_Chiba_logo.png",
     "nickname": "JEF, Inu (Dogs)",
     "ground": "Fukuda Denshi Arena",
     "league_titles": "0",
@@ -77,6 +82,7 @@
   {
     "team_id": "6",
     "name": "Kashima Antlers",
+    "badge": "static/img/badge/Kashima_Antlers.png",
     "nickname": "",
     "ground": "Kashima Soccer Stadium",
     "league_titles": "1996, 1998, 200, 2001, 2007, 2008, 2009, 2016",
@@ -92,6 +98,7 @@
   {
     "team_id": "7",
     "name": "Kashiwa Reysol",
+    "badge": "static/img/badge/Kashiwa_Reysol_logo.png",
     "nickname": "Taiyō-Ō (Sun King)",
     "ground": "Sankyo Frontier Kashiwa Stadium",
     "league_titles": "2011",
@@ -107,6 +114,7 @@
   {
     "team_id": "8",
     "name": "Kawasaki Frontale",
+    "badge": "static/img/badge/Kawasaki_Frontale_logo.png",
     "nickname": "Azzurro Nero",
     "ground": "Kawasaki Todoroki Stadium",
     "league_titles": "2017, 2018, 2020, 2021",
@@ -122,6 +130,7 @@
   {
     "team_id": "9",
     "name": "Kyoto Sanga FC",
+    "badge": "static/img/badge/Kyoto_Sanga_FC_logo.png",
     "nickname": "Sanga",
     "ground": "Sanga Stadium by Kyocera",
     "league_titles": "0",
@@ -137,6 +146,7 @@
   {
     "team_id": "10",
     "name": "Machida Zelvia",
+    "badge": "static/img/badge/FC_Machida_Zelvia_logo.png",
     "nickname": "Zelvia",
     "ground": "Machida Gion Stadium",
     "league_titles": "0",
@@ -152,6 +162,7 @@
   {
     "team_id": "11",
     "name": "Mito Hollyhock",
+    "badge": "static/img/badge/Mito_HollyHock_logo.png",
     "nickname": "Hollyhock, Mitochan",
     "ground": "K's denki Stadium Mito",
     "league_titles": "0",
@@ -167,6 +178,7 @@
   {
     "team_id": "12",
     "name": "Nagoya Grampus",
+    "badge": "static/img/badge/Nagoya_Grampus_logo.png",
     "nickname": "Grampus",
     "ground": "Toyota Stadium",
     "league_titles": "2010",
@@ -182,6 +194,7 @@
   {
     "team_id": "13",
     "name": "Sanfrecce Hiroshima",
+    "badge": "static/img/badge/Sanfrecce_Hiroshima_logo.png",
     "nickname": "Sanfre",
     "ground": "Edion Peace Wing Hiroshima",
     "league_titles": "2012, 2013, 2015",
@@ -197,6 +210,7 @@
   {
     "team_id": "14",
     "name": "Shimizu S-Pulse",
+    "badge": "static/img/badge/Shimizu_S-Pulse_logo.png",
     "nickname": "S-Pa",
     "ground": "IAI Stadium Nihondaira",
     "league_titles": "0",
@@ -212,6 +226,7 @@
   {
     "team_id": "15",
     "name": "FC Tokyo",
+    "badge": "static/img/badge/FC_Tokyo_logo.png",
     "nickname": "Gas",
     "ground": "Ajinomoto Stadium",
     "league_titles": "0",
@@ -227,6 +242,7 @@
   {
     "team_id": "16",
     "name": "Tokyo Verdy",
+    "badge": "static/img/badge/Tokyo_Verdy_logo.png",
     "nickname": "Verdy",
     "ground": "Ajinomoto Stadium",
     "league_titles": "1983, 1984, 1986, 1987, 1990, 1991, 1992, 1993, 1994",
@@ -242,6 +258,7 @@
   {
     "team_id": "17",
     "name": "Urawa Red Diamonds",
+    "badge": "static/img/badge/Urawa_Red_Diamonds_logo.png",
     "nickname": "Reds",
     "ground": "Saitama Stadium 2002",
     "league_titles": "2006",
@@ -257,6 +274,7 @@
   {
     "team_id": "18",
     "name": "V-Varen Nagasaki",
+    "badge": "static/img/badge/V-Varen_Nagasaki_logo.png",
     "nickname": "VVN",
     "ground": "Peace Stadium Connected by SoftBank",
     "league_titles": "0",
@@ -272,6 +290,7 @@
   {
     "team_id": "19",
     "name": "Vissel Kobe",
+    "badge": "static/img/badge/Vissel_Kobe_logo.png",
     "nickname": "Ushi (Cows)",
     "ground": "Noevir Stadium Kobe",
     "league_titles": "2023, 2024",
@@ -287,6 +306,7 @@
   {
     "team_id": "20",
     "name": "Yokohama F. Marinos",
+    "badge": "static/img/badge/Yokohama_F_Marinos_logo.png",
     "nickname": "Marinos",
     "ground": "Nissan Stadium",
     "league_titles": "1995, 2003, 2004, 2019, 2022",

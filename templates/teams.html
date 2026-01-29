@@ -6,10 +6,13 @@
     </div>
     <br>
     {% for team in teams %}
-        <div class="team-item">
-            <a href="{{ url_for('team_detail', team_id=team.team_id) }}">
-                {{ team.name }}
-            </a>
+        <div class="teams-grid">
+            <div class="team-item" >
+                <a href="{{ url_for('team_detail', team_id=team.team_id) }}" 
+                    style="background-image: url('{{ url_for('static', filename=team.badge.replace('static/', '')) }}');">
+                    {{ team.name }}
+                </a>
+            </div>
         </div>
     {% endfor %}
     
