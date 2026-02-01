@@ -7,7 +7,7 @@
             <h3>ホームページ</h3>
     </div>
     {% if fixtures %}
-        <div>
+        <div class="matchday-selector">
             <label for="matchday-select">Select Matchday:</label>
             <select id="matchday-select">
                 {% for round_name in fixtures.keys() %}
@@ -18,35 +18,47 @@
 
         {% for round_name, matches in fixtures.items() %}
         <div class="matchday-section" data-matchday="{{ loop.index0 }}">
-            <h3>{{ round_name }}</h3>
+            <h3 class="round-title">{{ round_name }}</h3>
             
-            <div>
+            <div class="fixtures-container">
                 {% for match in matches %}
-                <div>
+                <div class="fixture-card">
 
-                    <div>
-                        <img src="{{ match.teams.home.logo }}" alt="{{ match.teams.home.name }}">
-                        <span>{{ match.teams.home.name }}</span>
+                    <div class="team home-team">
+                        <img src="{{ match.teams.home.logo }}" alt="{{ match.teams.home.name }}" class="team-badge">
+                        <span class="team-name">{{ match.teams.home.name }}</span>
                     </div>
                     
-                    <div>
+                    <div class="match-centre">
                         {% if match.fixture.status.short == 'FT' %}
-                            <span>{{ match.goals.home }} - {{ match.goals.away }}</span>
-                            <div>Full Time</div>
+                            <div class="score">
+                                <span class="score-number">{{ match.goals.home }}</span>
+                                <span class="score-separator">-</span>
+                                <span class="score-number">{{ match.goals.away }}</span>
+                            </div>
+                            <div class="match-status finished">Full Time</div>
                         {% elif match.fixture.status.short == 'NS' %}
-                            <span>vs</span>
-                            <div>{{ match.fixture.date[:10] }}</div>
+                            <div class="versus">VS</div>
+                            <div class="match-status upcoming">{{ match.fixture.date[8:10] }}/{{ match.fixture.date[5:7] }}/{{ match.fixture.date[:4] }}</div>
+                            <div class="match-time">{{ match.fixture.date[11:16] }}</div>
                         {% elif match.fixture.status.short in ['1H', '2H', 'HT'] %}
-                            <span>{{ match.goals.home }} - {{ match.goals.away }}</span>
-                            <div>LIVE - {{ match.fixture.status.elapsed }}'</div>
+                            <div class="score live">
+                                <span class="score-number">{{ match.goals.home }}</span>
+                                <span class="score-separator">-</span>
+                                <span class="score-number">{{ match.goals.away }}</span>
+                            </div>
+                            <div class="match-status live-indicator">
+                                <span class="live-dot"></span>
+                                LIVE {{ match.fixture.status.elapsed }}'
+                            </div>
                         {% else %}
-                            <span>{{ match.fixture.status.long }}</span>
+                            <div class="match-status">{{ match.fixture.status.long }}</div>
                         {% endif %}
                     </div>
                     
-                    <div>
-                        <span>{{ match.teams.away.name }}</span>
-                        <img src="{{ match.teams.away.logo }}" alt="{{ match.teams.away.name }}">
+                    <div class="team away-team">
+                        <span class="team-name">{{ match.teams.away.name }}</span>
+                        <img src="{{ match.teams.away.logo }}" alt="{{ match.teams.away.name }}" class="team-badge">
                     </div>
                 </div>
                 {% endfor %}

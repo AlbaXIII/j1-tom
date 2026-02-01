@@ -26,7 +26,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.85); 
+  background: rgba(255, 255, 255, 0.85);
   z-index: -1;
 }
 
@@ -112,13 +112,193 @@ body::before {
 
 /* index page */
 
+.matchday-selector {
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 1.4em;
+  margin-bottom: 30px;
+}
+
+.matchday-selector label {
+  font-weight: bold;
+  margin-right: 15px;
+  color: #333;
+}
+
+.matchday-selector select {
+  padding: 10px 15px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  background: white;
+  cursor: pointer;
+  min-width: 250px;
+  text-align: center;
+}
+
+.matchday-selector select:focus {
+  outline: none;
+}
+
+.round-title {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-family: "Dela Gothic One", sans-serif;
+}
+
+.fixtures-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.fixture-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 15px;
+}
+
+.home-team {
+  justify-content: flex-start;
+}
+
+.away-team {
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+.team-badge {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.team-name {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #333;
+}
+
+.team-badge {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.match-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  text-align: center;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.score-number {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+}
+
+.score-separator {
+  font-size: 1.5em;
+  color: #999;
+}
+
+.versus {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.match-status {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 5px;
+}
+
+.match-status.finished {
+  color: #4caf50;
+  font-weight: 500;
+}
+
+.match-status.upcoming {
+  color: #666;
+  font-weight: 500;
+}
+
+.match-time {
+  font-size: 0.85em;
+  color: #999;
+  margin-top: 3px;
+}
+
+.live-indicator {
+  color: #f44336;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: #f44336;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.no-fixtures {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 1.2em;
+  background: white;
+  border-radius: 8px;
+}
+
 /* standings page */
 
 /* team page */
 
 .teams-header {
   text-align: center;
-  font-size: 1.6vw;
+  font-family: "Dela Gothic One", sans-serif;
 }
 
 .teams-grid {
@@ -179,10 +359,6 @@ body::before {
   font-size: 1.2em;
 }
 
-h1 {
-  font-family: "Dela Gothic One", sans-serif;
-}
-
 /* mobile responsivity */
 
 @media (max-width: 768px) {
@@ -205,6 +381,34 @@ h1 {
 
   .content-wrapper {
     padding: 80px 20px 20px;
+  }
+
+  .fixture-card {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .team {
+    width: 100%;
+    justify-content: center !important;
+    flex-direction: row !important;
+  }
+
+  .match-center {
+    width: 100%;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+
+  .team-name {
+    font-size: 1em;
+  }
+
+  .team-badge {
+    width: 40px;
+    height: 40px;
   }
 }
 
