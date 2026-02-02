@@ -68,10 +68,13 @@ def index():
         teams = []
         print("Warning: Invalid JSON in teams.json")
 
+    team_lookup = {team['name']: team['team_id'] for team in teams}
+
     fixtures_by_round = get_fixtures(98, season=2026)
 
     return render_template("index.html", teams=teams,
-                           fixtures=fixtures_by_round)
+                           fixtures=fixtures_by_round,
+                           team_lookup=team_lookup)
 
 
 @app.route("/about")

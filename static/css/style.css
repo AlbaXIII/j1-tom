@@ -112,17 +112,32 @@ body::before {
 
 /* index page */
 
+.main-title {
+  text-align: center;
+}
+
+.main-subtitle {
+  font-family: "Dela Gothic One", sans-serif;
+  text-align: center;
+}
+
+.main-select {
+  font-family: "Dela Gothic One", sans-serif;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.4em;
+}
+
 .matchday-selector {
   padding: 20px;
   border-radius: 8px;
   font-size: 1.4em;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .matchday-selector label {
-  font-weight: bold;
-  margin-right: 15px;
-  color: #333;
+  display: none;
 }
 
 .matchday-selector select {
@@ -174,13 +189,32 @@ body::before {
   gap: 15px;
 }
 
+.team-link {
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.team-link:hover {
+  opacity: 0.7;
+}
+
+.team-link .team-name {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.2s;
+}
+
 .home-team {
   justify-content: flex-start;
+  padding-right: 15px;
+  text-decoration: none;
 }
 
 .away-team {
   justify-content: flex-end;
   flex-direction: row-reverse;
+  padding-left: 15px;
+  text-decoration: none;
 }
 
 .team-badge {
