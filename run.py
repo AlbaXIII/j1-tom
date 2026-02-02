@@ -114,9 +114,9 @@ def team_detail(team_id):
         return "Teams data not found", 404
 
 
-@app.route("/results")
-def results():
-    return render_template("results.html")
+@app.route("/stats")
+def stats():
+    return render_template("stats.html")
 
 
 @app.route("/standings")
