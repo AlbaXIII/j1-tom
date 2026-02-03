@@ -112,13 +112,31 @@ body::before {
 
 /* index page */
 
+.main-image {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .main-title {
   text-align: center;
+  font-family: "Dela Gothic One", sans-serif;
+}
+
+.main-title a {
+  text-decoration: none;
+  color: #333;
 }
 
 .main-subtitle {
   font-family: "Dela Gothic One", sans-serif;
   text-align: center;
+}
+
+.main-video {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
 }
 
 .main-select {
