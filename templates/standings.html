@@ -1,13 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <h1>Standings</h1>
-                <h2>リーグテーブル</h2>
-            </div>
-        </div>
+    <div class="standings-titles">
+        <h1>Standings</h1>
+        <h2>リーグテーブル</h2>
     </div>
+
     {% if standings %}
         <div class="table-container">
         <table class="league-table">

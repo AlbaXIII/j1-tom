@@ -110,6 +110,11 @@ body::before {
 
 /* about page */
 
+.about-headers {
+  text-align: center;
+  font-family: "Dela Gothic One", sans-serif;
+}
+
 /* index page */
 
 .main-image {
@@ -152,6 +157,7 @@ body::before {
   font-size: 1.4em;
   margin-bottom: 30px;
   text-align: center;
+  font-family: "Vend Sans", sans-serif;
 }
 
 .matchday-selector label {
@@ -175,7 +181,8 @@ body::before {
 
 .round-title {
   font-size: 1.5em;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding-bottom: 10px;
   text-align: center;
   font-family: "Dela Gothic One", sans-serif;
@@ -205,6 +212,7 @@ body::before {
   align-items: center;
   flex: 1;
   gap: 15px;
+  font-family: "Vend Sans", sans-serif;
 }
 
 .team-link {
@@ -344,7 +352,19 @@ body::before {
   border-radius: 8px;
 }
 
+/* stats page */
+
+.stats-titles {
+  text-align: center;
+  font-family: "Dela Gothic One", sans-serif;
+}
+
 /* standings page */
+
+.standings-titles {
+  text-align: center;
+  font-family: "Dela Gothic One", sans-serif;
+}
 
 /* team page */
 
@@ -393,6 +413,11 @@ body::before {
 }
 
 /* team detail page */
+
+.detail-headers {
+  font-family: "Dela Gothic One", sans-serif;
+  text-align: center;
+}
 
 /* mobile sidebar toggle */
 
