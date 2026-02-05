@@ -465,6 +465,15 @@ body::before {
   margin-top: 10px;
 }
 
+.kit-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  margin: 20px auto 0;
+  display: block;
+}
+
 .player-image-placeholder {
   margin-top: 15px;
   padding: 40px;
@@ -640,7 +649,7 @@ body::before {
     width: 40px;
     height: 40px;
   }
-  
+
   .team-header h1 {
     font-size: 2em;
   }
