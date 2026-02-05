@@ -1,85 +1,102 @@
-{% extends "base.html" %}
-{% block content %}
-    <div>
-        <div class="detail-headers">
-            <h1>{{ team.name }}</h1>
-            <h2>"{{ team.nickname }}"</h2>
+{% extends "base.html" %} {% block content %}
+<div>
+  <div class="detail-headers">
+    <h1>{{ team.name }}</h1>
+    <h2>"{{ team.nickname }}"</h2>
+    <img
+      src="{{ url_for('static', filename=team.badge.replace('static/', '')) }}"
+      alt="{{ team.name }} badge"
+      class="detail-badge"
+    />
+  </div>
+  <div class="info-row">
+    <div class="info-card">
+        <h3>Stadium</h3>
+            <p>{{ team.ground }}</p>
         </div>
-        <div>
-            <div>
-                <h3>Stadium</h3>
-                <p>{{ team.ground }}</p>
-            </div>
+        <div class="info-card map-card">
+            <h3>Location</h3>
+            <img src="{{ url_for('static', filename=team.map.replace('static/', '')) }}" alt="Map of {{ team.ground }}" class="map-image">
+    </div>
+  </div>
 
-            <div>
-                <h3>Manager</h3>
-                <p>{{ team.manager }}</p>
-            </div>
+  <div class="info-row">
+    <div class="info-card">
+        <h3>Manager</h3>
+        <p>{{ team.manager }}</p>
+    </div>
+    <div class="info-card">
+        <h3>Captain</h3>
+        <p>{{ team.captain }}</p>
+    </div>
+  </div>
 
-            <div>
-                <h3>Captain</h3>
-                <p>{{ team.captain }}</p>
-            </div>
-
-            <div>
-                <h3>Key Player</h3>
-                <p>{{ team.key_player }}</p>
-            </div>
-
-            <div>
-                <h3>Famous Face</h3>
-                <p>{{ team.famous_face }}</p>
-            </div>
-
-            <div>
-                <h3>Current J1 Seasons</h3>
-                <p>{{ team.current_j1_seasons }}</p>
-            </div>
+  <div class="info-row">
+    <div class="info-card player-card">
+        <h3>Key Player</h3>
+        <p>{{ team.key_player }}</p>
+        <div class="player-image-placeholder">Image coming soon</div>
+    </div>
+    <div class="info-card player-card">
+        <h3>Famous Face</h3>
+        <p>{{ team.famous_face }}</p>
+        <div class="player-image-placeholder">Image coming soon</div>
         </div>
+  </div>
 
-        <div>
-            <h3>Honours</h3>
-            <div>
-                <div>
-                    <strong>League Titles:</strong> 
+  <div class="info-card-full">
+    <h3>Consecutive J1 Seasons</h3>
+    <p class="highlight-stat">{{ team.current_j1_seasons }}</p>
+  </div>
+
+  <div class="honours-card">
+    <h3>Honours</h3>
+        <div class="honours-grid">
+            <div class="honour-item">
+                <span class="honour-label">League Titles</span>
+                <span class="honour-value">
                     {% if team.league_titles != "0" %}
                         {{ team.league_titles }}
                     {% else %}
-                        None
+                        -
                     {% endif %}
-                </div>
-                <div>
-                    <strong>Emperor's Cups:</strong> 
+                </span>
+            </div>
+            <div class="honour-item">
+                <span class="honour-label">Emperor's Cups</span>
+                <span class="honour-value">
                     {% if team.emperors_cups != "0" %}
                         {{ team.emperors_cups }}
                     {% else %}
-                        None
+                        -
                     {% endif %}
-                </div>
-                <div>
-                    <strong>J.League Cups:</strong> 
-                    {% if team.j_league_cups != "0" %}
-                        {{ team.j_league_cups }}
-                    {% else %}
-                        None
-                    {% endif %}
-                </div>
-            </div>
+                </span>
         </div>
-
-        {% if team.video_url %}
-        <div>
-            <h3>Team Video</h3>
-            <iframe width="560" height="315" 
-                    src="{{ team.video_url.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0] }}" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-            </iframe>
+        <div class="honour-item">
+                <span class="honour-label">J.League Cups</span>
+                <span class="honour-value">
+                {% if team.j_league_cups != "0" %}
+                    {{ team.j_league_cups }}
+                {% else %}
+                    -
+                {% endif %}
+            </span>
         </div>
-        {% endif %}
-
-        <a href="{{ url_for('teams') }}">← Back to Teams</a>
     </div>
+  </div>
+
+  {% if team.video_url %}
+  <div class="video-card">
+    <h3>Team Video</h3>
+    <iframe width="100%" height="400" 
+        src="{{ team.video_url.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0] }}" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+  </div>
+  {% endif %}
+  <a href="{{ url_for('teams') }}" class="back-link">← Back to Teams</a>
+</div>
 
 {% endblock %}
