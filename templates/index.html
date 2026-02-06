@@ -8,7 +8,7 @@
     <h2>Learn More</h2>
   </a>
 </div>
-<br>
+<br />
 <div class="main-subtitle">
   <h2>Match Centre</h2>
   <h3>ホームページ</h3>
@@ -74,14 +74,25 @@
       </div>
       {% endif %}
 
-      <div class="match-centre">
-        {% if match.fixture.status.short == 'FT' %}
+      <div class="match-center">
+        {% if match.fixture.status.short == 'FT' or match.fixture.status.short
+        == 'AET' or match.fixture.status.short == 'PEN' %}
         <div class="score">
           <span class="score-number">{{ match.goals.home }}</span>
           <span class="score-separator">-</span>
           <span class="score-number">{{ match.goals.away }}</span>
         </div>
-        <div class="match-status finished">Full Time</div>
+        {% if match.score.penalty.home is not none and match.score.penalty.away
+        is not none %}
+        <div class="penalty-score">
+          ({{ match.score.penalty.home }} - {{ match.score.penalty.away }} pens)
+        </div>
+        {% endif %}
+        <div class="match-status finished">
+          {% if match.fixture.status.short == 'PEN' %} Penalties {% elif
+          match.fixture.status.short == 'AET' %} After Extra Time {% else %}
+          Full Time {% endif %}
+        </div>
         {% elif match.fixture.status.short == 'NS' %}
         <div class="versus">VS</div>
         <div class="match-status upcoming">

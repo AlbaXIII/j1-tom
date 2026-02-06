@@ -534,6 +534,7 @@ body::before {
   background: #f9f9f9;
   border-radius: 5px;
   border-left: 4px solid #bc002d;
+  min-width: 0;
 }
 
 .honour-label {
@@ -544,9 +545,14 @@ body::before {
 }
 
 .honour-value {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
   color: #333;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  width: 100%;
+  line-height: 1.4;
 }
 
 .video-card {
