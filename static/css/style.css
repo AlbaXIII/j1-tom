@@ -363,7 +363,97 @@ body::before {
 
 .standings-titles {
   text-align: center;
-  font-family: "Dela Gothic One", sans-serif;
+  font-family: "Dela Gothic One", sans-serif; 
+}
+
+.table-container {
+  margin-top: 30px;
+  overflow-x: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.league-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Vend Sans", sans-serif;
+}
+
+.league-table thead {
+  background: #bc002d;
+  color: white;
+}
+
+.league-table th {
+  padding: 15px 10px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.league-table td {
+  padding: 15px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.league-table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.league-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.league-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.rank {
+  font-weight: bold;
+  text-align: center;
+  width: 50px;
+  color: #bc002d;
+}
+
+.league-table .team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.stats {
+  text-align: center;
+  width: 50px;
+  font-size: 0.95em;
+}
+
+.points {
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  background-color: #f9f9f9;
+  font-size: 1.1em;
+  color: #bc002d;
+}
+
+.error-message {
+  color: #bc002d;
+  padding: 40px;
+  text-align: center;
+  font-weight: bold;
+  background: white;
+  border-radius: 8px;
+  margin-top: 20px;
 }
 
 /* team page */
@@ -679,6 +769,28 @@ body::before {
 
   .video-card iframe {
     height: 250px;
+  }
+    .table-container {
+    padding: 10px;
+  }
+
+  .league-table th,
+  .league-table td {
+    padding: 10px 5px;
+    font-size: 0.85em;
+  }
+
+  .team-logo {
+    width: 25px;
+    height: 25px;
+  }
+
+  .stats {
+    width: 40px;
+  }
+
+  .rank {
+    width: 40px;
   }
 }
 
