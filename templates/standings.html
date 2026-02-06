@@ -29,7 +29,13 @@
                     <td>
                         <div class="team">
                             <img src="{{ team.team.logo }}" alt="{{ team.team.name }}" class="team-logo">
-                            <span>{{ team.team.name }}</span>
+                            {% if team.team.name in team_lookup %}
+                                <a href="{{ url_for('team_detail', team_id=team_lookup[team.team.name]) }}" class="team-name-link">
+                                    {{ team.team.name }}
+                                </a>
+                            {% else %}
+                                <span>{{ team.team.name }}</span>
+                            {% endif %}
                         </div>
                     </td>
                     <td class="stats">{{ team.all.played }}</td>

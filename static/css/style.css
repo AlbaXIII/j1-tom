@@ -400,6 +400,17 @@ body::before {
   border-bottom: 1px solid #eee;
 }
 
+.team-name-link {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.team-name-link:hover {
+  color: #bc002d;
+  text-decoration: underline;
+}
+
 .league-table tbody tr {
   transition: background-color 0.2s;
 }

@@ -121,8 +121,20 @@ def stats():
 
 @app.route("/standings")
 def standings():
+    import json
+
+    try:
+        with open("data/teams.json", "r", encoding="utf-8") as json_data:
+            teams = json.load(json_data)
+    except FileNotFoundError:
+        teams = []
+
+    team_lookup = {team['name']: team['team_id'] for team in teams}
+
     standings_data = get_standings(98, season=2026)
-    return render_template("standings.html", standings=standings_data)
+
+    return render_template("standings.html", 
+                           standings=standings_data, team_lookup=team_lookup)
 
 
 if __name__ == "__main__":
