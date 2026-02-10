@@ -133,7 +133,7 @@ def standings():
 
     standings_data = get_standings(98, season=2026)
 
-    return render_template("standings.html", 
+    return render_template("standings.html",
                            standings=standings_data, team_lookup=team_lookup)
 
 
