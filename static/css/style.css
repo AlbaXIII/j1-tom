@@ -375,6 +375,34 @@ body::before {
   padding: 20px;
 }
 
+.conference-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.tab-button {
+  padding: 12px 30px;
+  background: white;
+  border: 2px solid #bc002d;
+  color: #bc002d;
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 1.1em;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.tab-button:hover {
+  background: #f9f9f9;
+}
+
+.tab-button.active {
+  background: #bc002d;
+  color: white;
+}
+
 .league-table {
   width: 100%;
   border-collapse: collapse;

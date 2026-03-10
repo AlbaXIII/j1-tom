@@ -44,10 +44,33 @@ def get_standings(league_id, season=2026):
         response = requests.get(url, headers=headers, params=params)
         data = response.json()
 
-        print(f"Standings API Response: {data}")
+        print(f"Standings API Response for season {season}: {data}")
 
         if data['response'] and len(data['response']) > 0:
-            return data['response'][0]['league']['standings'][0]
+            all_standings = data['response'][0]['league']['standings']
+
+            if len(all_standings) > 1:
+                return {
+                    'conferences': all_standings,
+                    'has_conferences': True
+                }
+            else:
+                return {
+                    'conferences': [all_standings[0]],
+                    'has_conferences': False
+                }
+        else:
+            print(f"No standings data for season {season}, trying {season-1}")
+            params['season'] = season - 1
+            response = requests.get(url, headers=headers, params=params)
+            data = response.json()
+            if data['response'] and len(data['response']) > 0:
+                print(f"Using {season-1} season data as fallback")
+                return {
+                    'conferences':
+                        [data['response'][0]['league']['standings'][0]],
+                    'has_conferences': False
+                }
         return None
     except Exception as e:
         print(f"Error fetching standings: {e}")

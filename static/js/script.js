@@ -30,3 +30,24 @@ selector.addEventListener("change", function () {
     selectedMatchday.style.display = "block";
   }
 });
+
+function showConference(conferenceIndex) {
+  const tables = document.querySelectorAll(".conference-table");
+  tables.forEach((table) => {
+    table.style.display = "none";
+  });
+
+  const buttons = document.querySelectorAll(".tab-button");
+  buttons.forEach((button) => {
+    button.classList.remove("active");
+  });
+
+  const selectedTable = document.querySelector(
+    `[data-conference="${conferenceIndex}"]`,
+  );
+  if (selectedTable) {
+    selectedTable.style.display = "block";
+  }
+
+  buttons[conferenceIndex].classList.add("active");
+}
