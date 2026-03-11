@@ -3,6 +3,107 @@
     <div class="stats-titles">
         <h1>Stats</h1>
         <h2>統計</h2>
-        <p>COMING SOON!</p>
     </div>
+
+    <div class="stats-tabs">
+        <button class="tab-button active" onclick="showStat('goals')">Top Scorers</button>
+        <button class="tab-button" onclick="showStat('assists')">Top Assists</button>
+    </div>
+
+    {% if top_scorers %}
+    <div class="table-container stats-table" data-stat="goals">
+        <table class="league-table">
+            <thead>
+                <tr>
+                    <th class="rank">Rank</th>
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th class="stats">Apps</th>
+                    <th class="points">Goals</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player_data in top_scorers %}
+                <tr>
+                    <td class="rank">{{ loop.index }}</td>
+                    <td>
+                        <div class="player-info">
+                            <img src="{{ player_data.player.photo }}" alt="{{ player_data.player.name }}" class="player-photo">
+                            <div class="player-details">
+                                <span class="player-name">{{ player_data.player.name }}</span>
+                                <span class="player-position">{{ player_data.statistics[0].games.position }}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="team">
+                            <img src="{{ player_data.statistics[0].team.logo }}" alt="{{ player_data.statistics[0].team.name }}" class="team-logo">
+                            {% if player_data.statistics[0].team.name in team_lookup %}
+                                <a href="{{ url_for('team_detail', team_id=team_lookup[player_data.statistics[0].team.name]) }}" class="team-name-link">
+                                    {{ player_data.statistics[0].team.name }}
+                                </a>
+                            {% else %}
+                                <span>{{ player_data.statistics[0].team.name }}</span>
+                            {% endif %}
+                        </div>
+                    </td>
+                    <td class="stats">{{ player_data.statistics[0].games.appearences }}</td>
+                    <td class="points">{{ player_data.statistics[0].goals.total }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+
+    {% if top_assists %}
+    <div class="table-container stats-table" data-stat="assists" style="display: none;">
+        <table class="league-table">
+            <thead>
+                <tr>
+                    <th class="rank">Rank</th>
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th class="stats">Apps</th>
+                    <th class="points">Assists</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player_data in top_assists %}
+                <tr>
+                    <td class="rank">{{ loop.index }}</td>
+                    <td>
+                        <div class="player-info">
+                            <img src="{{ player_data.player.photo }}" alt="{{ player_data.player.name }}" class="player-photo">
+                            <div class="player-details">
+                                <span class="player-name">{{ player_data.player.name }}</span>
+                                <span class="player-position">{{ player_data.statistics[0].games.position }}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="team">
+                            <img src="{{ player_data.statistics[0].team.logo }}" alt="{{ player_data.statistics[0].team.name }}" class="team-logo">
+                            {% if player_data.statistics[0].team.name in team_lookup %}
+                                <a href="{{ url_for('team_detail', team_id=team_lookup[player_data.statistics[0].team.name]) }}" class="team-name-link">
+                                    {{ player_data.statistics[0].team.name }}
+                                </a>
+                            {% else %}
+                                <span>{{ player_data.statistics[0].team.name }}</span>
+                            {% endif %}
+                        </div>
+                    </td>
+                    <td class="stats">{{ player_data.statistics[0].games.appearences }}</td>
+                    <td class="points">{{ player_data.statistics[0].goals.assists }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+
+    {% if not top_scorers and not top_assists %}
+    <p class="error-message">Unable to load statistics data. Please try again later.</p>
+    {% endif %}
+    
 {% endblock %}

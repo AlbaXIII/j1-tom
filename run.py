@@ -34,6 +34,46 @@ def get_fixtures(league_id, season=2026):
         return None
 
 
+def get_top_scorers(league_id, season=2026):
+    """Fetch top scorers from API-Sports"""
+    url = 'https://v3.football.api-sports.io/players/topscorers'
+    headers = {'x-apisports-key': API_KEY}
+    params = {'league': league_id, 'season': season}
+
+    try:
+        response = requests.get(url, headers=headers, params=params)
+        data = response.json()
+
+        print(f"Top Scorers API Response: {data}")
+
+        if data['response']:
+            return data['response'][:20]
+        return None
+    except Exception as e:
+        print(f"Error fetching top scorers: {e}")
+        return None
+
+
+def get_top_assists(league_id, season=2026):
+    """Fetch top assists from API-Sports"""
+    url = 'https://v3.football.api-sports.io/players/topassists'
+    headers = {'x-apisports-key': API_KEY}
+    params = {'league': league_id, 'season': season}
+
+    try:
+        response = requests.get(url, headers=headers, params=params)
+        data = response.json()
+
+        print(f"Top Assists API Response: {data}")
+
+        if data['response']:
+            return data['response'][:20]
+        return None
+    except Exception as e:
+        print(f"Error fetching top assists: {e}")
+        return None
+
+
 def get_standings(league_id, season=2026):
     """Fetch standings from API-Sports"""
     url = 'https://v3.football.api-sports.io/standings'
@@ -139,7 +179,23 @@ def team_detail(team_id):
 
 @app.route("/stats")
 def stats():
-    return render_template("stats.html")
+    import json
+
+    try:
+        with open("data/teams.json", "r", encoding="utf-8") as json_data:
+            teams = json.load(json_data)
+    except FileNotFoundError:
+        teams = []
+
+    team_lookup = {team['name']: team['team_id'] for team in teams}
+
+    top_scorers = get_top_scorers(98, season=2026)
+    top_assists = get_top_assists(98, season=2026)
+
+    return render_template("stats.html",
+                           top_scorers=top_scorers,
+                           top_assists=top_assists,
+                           team_lookup=team_lookup)
 
 
 @app.route("/standings")

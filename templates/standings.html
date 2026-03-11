@@ -14,8 +14,7 @@
 {% endif %}
 
 {% for conference in standings.conferences %}
-<div class="table-container conference-table" data-conference="{{ loop.index0 }}"
-    style="display: {% if loop.index0 == 0 %}block{% else %}none{% endif %};">
+<div class="table-container conference-table" data-conference="{{ loop.index0 }}">
 
     <table class="league-table">
         <thead>

@@ -359,6 +359,43 @@ body::before {
   font-family: "Dela Gothic One", sans-serif;
 }
 
+/* stats page */
+
+.stats-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.player-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.player-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.player-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.player-position {
+  font-size: 0.8em;
+  color: #999;
+}
+
 /* standings page */
 
 .standings-titles {

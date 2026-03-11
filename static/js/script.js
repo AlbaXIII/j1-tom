@@ -51,3 +51,30 @@ function showConference(conferenceIndex) {
 
   buttons[conferenceIndex].classList.add("active");
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const firstConference = document.querySelector('.conference-table[data-conference="0"]');
+    if (firstConference) {
+        showConference(0);
+    }
+});
+
+function showStat(statType) {
+    const tables = document.querySelectorAll('.stats-table');
+    tables.forEach(table => {
+        table.style.display = 'none';
+    });
+
+    const buttons = document.querySelectorAll('.stats-tabs .tab-button');
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    const selectedTable = document.querySelector(`[data-stat="${statType}"]`);
+    if (selectedTable) {
+        selectedTable.style.display = 'block';
+    }
+
+    const clickedButton = event.target;
+    clickedButton.classList.add('active');
+}
