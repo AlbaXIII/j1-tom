@@ -700,9 +700,9 @@ body::before {
   background: #f9f9f9;
   border-radius: 5px;
   border-left: 4px solid #bc002d;
-  min-width: 0;
+  min-width: 0; 
+  overflow: hidden; 
 }
-
 .honour-label {
   font-size: 0.9em;
   color: #666;
@@ -711,14 +711,17 @@ body::before {
 }
 
 .honour-value {
-  font-size: 1.2em;
+  font-size: 1em; 
   font-weight: bold;
   color: #333;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  word-break: break-word; 
+  hyphens: auto; 
   text-align: center;
   width: 100%;
-  line-height: 1.4;
+  line-height: 1.5;
+  max-width: 100%;
 }
 
 .video-card {
