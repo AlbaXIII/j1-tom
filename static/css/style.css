@@ -687,41 +687,35 @@ body::before {
 }
 
 .honours-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-direction: column; 
+  gap: 12px;
 }
 
 .honour-item {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 200px 1fr; 
   align-items: center;
-  padding: 20px;
+  padding: 15px 20px;
   background: #f9f9f9;
   border-radius: 5px;
   border-left: 4px solid #bc002d;
-  min-width: 0; 
-  overflow: hidden; 
+  gap: 20px;
 }
+
 .honour-label {
-  font-size: 0.9em;
+  font-size: 1em;
   color: #666;
-  margin-bottom: 10px;
-  text-align: center;
+  font-weight: 500;
+  text-align: left; 
 }
 
 .honour-value {
-  font-size: 1em; 
+  font-size: 1em;
   font-weight: bold;
   color: #333;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  word-break: break-word; 
-  hyphens: auto; 
-  text-align: center;
-  width: 100%;
-  line-height: 1.5;
-  max-width: 100%;
+  text-align: left; 
+  line-height: 1.6;
 }
 
 .video-card {
