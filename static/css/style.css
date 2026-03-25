@@ -126,6 +126,10 @@ body::before {
   font-size: 1.2em;
 }
 
+.about-container {
+  text-align: center; 
+}
+
 .gif-container {
   text-align: center;
   margin: 5px
@@ -140,7 +144,7 @@ body::before {
 }
 
 #about-text {
-  margin: 10px;
+  margin: 10px auto;
   font-size: 1.2em;
   font-family: "Vend Sans", sans-serif;
   width: 75%;
