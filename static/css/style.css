@@ -115,6 +115,38 @@ body::before {
   font-family: "Dela Gothic One", sans-serif;
 }
 
+.about-subheader {
+  text-align: center;
+  font-family: "Vend Sans", sans-serif;
+}
+
+.about-byline {
+  text-align: center;
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 1.2em;
+}
+
+.gif-container {
+  text-align: center;
+  margin: 5px
+}
+
+.about-gif {
+  max-width: 50%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  align-items: center;
+}
+
+#about-text {
+  margin: 10px;
+  font-size: 1.2em;
+  font-family: "Vend Sans", sans-serif;
+  width: 75%;
+  text-align: center;
+}
+
 /* index page */
 
 .main-image {

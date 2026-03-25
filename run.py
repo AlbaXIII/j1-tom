@@ -1,7 +1,10 @@
 import os
+from dotenv import load_dotenv
 import requests
 import json
 from flask import Flask, render_template
+
+load_dotenv()
 
 app = Flask(__name__)
 API_KEY = os.getenv("API_SPORTS_KEY")
