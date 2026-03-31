@@ -219,6 +219,12 @@ def standings():
                            standings=standings_data, team_lookup=team_lookup)
 
 
+@app.route("/recap")
+def recap():
+    import json
+    return render_template("recap.html")
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
