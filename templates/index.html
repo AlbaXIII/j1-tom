@@ -14,12 +14,9 @@
   <h3>ホームページ</h3>
 </div>
 <div class="main-video">
-    <iframe width="560" height="315" 
-            src="https://www.youtube-nocookie.com/embed/wCNfpi8aQrM" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-    </iframe>
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wCNfpi8aQrM" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+  </iframe>
 </div>
 {% if fixtures %}
 <div class="main-select">Select Matchday:</div>
@@ -40,25 +37,37 @@
     {% for match in matches %}
     <div class="fixture-card">
       {% if match.teams.home.name in team_lookup %}
-      <a
-        href="{{ url_for('team_detail', team_id=team_lookup[match.teams.home.name]) }}"
-        class="team home-team team-link"
-      >
-        <img
-          src="{{ match.teams.home.logo }}"
-          alt="{{ match.teams.home.name }}"
-          class="team-badge"
-        />
-        <span class="team-name">{{ match.teams.home.name }}</span>
+      <a href="{{ url_for('team_detail', team_id=team_lookup[match.teams.home.name]) }}"
+        class="team home-team team-link">
+        <div class="team-info-wrapper">
+          <img src="{{ match.teams.home.logo }}" alt="{{ match.teams.home.name }}" class="team-badge">
+          <div class="team-name-form">
+            <span class="team-name">{{ match.teams.home.name }}</span>
+            {% if match.teams.home.form %}
+            <div class="form-indicator">
+              {% for result in match.teams.home.form[-5:] %}
+              <span class="form-box form-{{ result }}">{{ result }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
       </a>
       {% else %}
       <div class="team home-team">
-        <img
-          src="{{ match.teams.home.logo }}"
-          alt="{{ match.teams.home.name }}"
-          class="team-badge"
-        />
-        <span class="team-name">{{ match.teams.home.name }}</span>
+        <div class="team-info-wrapper">
+          <img src="{{ match.teams.home.logo }}" alt="{{ match.teams.home.name }}" class="team-badge">
+          <div class="team-name-form">
+            <span class="team-name">{{ match.teams.home.name }}</span>
+            {% if match.teams.home.form %}
+            <div class="form-indicator">
+              {% for result in match.teams.home.form[-5:] %}
+              <span class="form-box form-{{ result }}">{{ result }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
       </div>
       {% endif %}
 
@@ -76,6 +85,29 @@
           ({{ match.score.penalty.home }} - {{ match.score.penalty.away }} pens)
         </div>
         {% endif %}
+
+        {% if match.events %}
+        <div class="goal-scorers">
+          {% set home_scorers = [] %}
+          {% set away_scorers = [] %}
+          {% for event in match.events %}
+          {% if event.type == 'Goal' and event.detail not in ['Penalty', 'Own Goal'] %}
+          {% if event.team.id == match.teams.home.id %}
+          {% set _ = home_scorers.append(event.player.name.split()[-1] + " " + event.time.elapsed|string + "'") %}
+          {% else %}
+          {% set _ = away_scorers.append(event.player.name.split()[-1] + " " + event.time.elapsed|string + "'") %}
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+          {% if home_scorers %}
+          <div class="scorers-home">{{ home_scorers|join(', ') }}</div>
+          {% endif %}
+          {% if away_scorers %}
+          <div class="scorers-away">{{ away_scorers|join(', ') }}</div>
+          {% endif %}
+        </div>
+        {% endif %}
+
         <div class="match-status finished">
           {% if match.fixture.status.short == 'PEN' %} Penalties {% elif
           match.fixture.status.short == 'AET' %} After Extra Time {% else %}
@@ -104,25 +136,37 @@
       </div>
 
       {% if match.teams.away.name in team_lookup %}
-      <a
-        href="{{ url_for('team_detail', team_id=team_lookup[match.teams.away.name]) }}"
-        class="team away-team team-link"
-      >
-        <span class="team-name">{{ match.teams.away.name }}</span>
-        <img
-          src="{{ match.teams.away.logo }}"
-          alt="{{ match.teams.away.name }}"
-          class="team-badge"
-        />
+      <a href="{{ url_for('team_detail', team_id=team_lookup[match.teams.away.name]) }}"
+        class="team away-team team-link">
+        <div class="team-info-wrapper">
+          <div class="team-name-form">
+            <span class="team-name">{{ match.teams.away.name }}</span>
+            {% if match.teams.away.form %}
+            <div class="form-indicator">
+              {% for result in match.teams.away.form[-5:] %}
+              <span class="form-box form-{{ result }}">{{ result }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          <img src="{{ match.teams.away.logo }}" alt="{{ match.teams.away.name }}" class="team-badge">
+        </div>
       </a>
       {% else %}
       <div class="team away-team">
-        <span class="team-name">{{ match.teams.away.name }}</span>
-        <img
-          src="{{ match.teams.away.logo }}"
-          alt="{{ match.teams.away.name }}"
-          class="team-badge"
-        />
+        <div class="team-info-wrapper">
+          <div class="team-name-form">
+            <span class="team-name">{{ match.teams.away.name }}</span>
+            {% if match.teams.away.form %}
+            <div class="form-indicator">
+              {% for result in match.teams.away.form[-5:] %}
+              <span class="form-box form-{{ result }}">{{ result }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          <img src="{{ match.teams.away.logo }}" alt="{{ match.teams.away.name }}" class="team-badge">
+        </div>
       </div>
       {% endif %}
     </div>
