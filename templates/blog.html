@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="blog-header">
+        <h1>Blog</h1>
+    </div>
+
+    <div class="posts-list">
+        {% for post in posts %}
+        <a href="{{ url_for('blog_post', slug=post.slug) }}" class="post-card">
+            <h2>{{ post.title }}</h2>
+            <p class="post-meta">{{ post.date.strftime('%B %d, %Y') }} · {{ post.author }}</p>
+            <p class="post-excerpt">{{ post.excerpt }}</p>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}
