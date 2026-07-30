@@ -38,9 +38,9 @@
           <img src="{{ match.teams.home.logo }}" alt="{{ match.teams.home.name }}" class="team-badge">
           <div class="team-name-form">
             <span class="team-name">{{ match.teams.home.name }}</span>
-            {% if match.teams.home.form %}
+            {% if match.teams.home.name in form_lookup and form_lookup[match.teams.home.name] %}
             <div class="form-indicator">
-              {% for result in match.teams.home.form[-5:] %}
+              {% for result in form_lookup[match.teams.home.name][-5:] %}
               <span class="form-box form-{{ result }}">{{ result }}</span>
               {% endfor %}
             </div>
@@ -54,9 +54,9 @@
           <img src="{{ match.teams.home.logo }}" alt="{{ match.teams.home.name }}" class="team-badge">
           <div class="team-name-form">
             <span class="team-name">{{ match.teams.home.name }}</span>
-            {% if match.teams.home.form %}
+            {% if match.teams.home.name in form_lookup and form_lookup[match.teams.home.name] %}
             <div class="form-indicator">
-              {% for result in match.teams.home.form[-5:] %}
+              {% for result in form_lookup[match.teams.home.name][-5:] %}
               <span class="form-box form-{{ result }}">{{ result }}</span>
               {% endfor %}
             </div>
@@ -136,9 +136,9 @@
         <div class="team-info-wrapper">
           <div class="team-name-form">
             <span class="team-name">{{ match.teams.away.name }}</span>
-            {% if match.teams.away.form %}
+            {% if match.teams.away.name in form_lookup and form_lookup[match.teams.away.name] %}
             <div class="form-indicator">
-              {% for result in match.teams.away.form[-5:] %}
+              {% for result in form_lookup[match.teams.away.name][-5:] %}
               <span class="form-box form-{{ result }}">{{ result }}</span>
               {% endfor %}
             </div>
@@ -152,9 +152,9 @@
         <div class="team-info-wrapper">
           <div class="team-name-form">
             <span class="team-name">{{ match.teams.away.name }}</span>
-            {% if match.teams.away.form %}
+            {% if match.teams.away.name in form_lookup and form_lookup[match.teams.away.name] %}
             <div class="form-indicator">
-              {% for result in match.teams.away.form[-5:] %}
+              {% for result in form_lookup[match.teams.away.name][-5:] %}
               <span class="form-box form-{{ result }}">{{ result }}</span>
               {% endfor %}
             </div>

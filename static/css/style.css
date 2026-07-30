@@ -379,6 +379,64 @@ body::before {
   }
 }
 
+/* Form indicators */
+
+.team-info-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.team-name-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-indicator {
+  display: flex;
+  gap: 3px;
+}
+
+.form-box {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  font-weight: bold;
+  border-radius: 3px;
+  color: white;
+}
+
+.form-W {
+  background-color: #4caf50; /* Green for win */
+}
+
+.form-D {
+  background-color: #ff9800; /* Orange for draw */
+}
+
+.form-L {
+  background-color: #f44336; /* Red for loss */
+}
+
+/* Goal scorers */
+
+.goal-scorers {
+  margin-top: 8px;
+  font-size: 0.85em;
+  color: #666;
+  max-width: 200px;
+}
+
+.scorers-home,
+.scorers-away {
+  margin: 2px 0;
+  line-height: 1.4;
+}
+
 .no-fixtures {
   text-align: center;
   padding: 40px;

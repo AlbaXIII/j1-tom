@@ -40,6 +40,41 @@ def get_fixtures(league_id, season=2027):
         return None
 
 
+def get_team_form_lookup(league_id, season=2027):
+    url = "https://v3.football.api-sports.io/standings"
+    headers = {"x-apisports-key": API_KEY}
+    params = {"league": league_id, "season": season}
+
+    try:
+        response = requests.get(url, headers=headers, params=params)
+        data = response.json()
+
+        form_lookup = {}
+
+        if data["response"] and len(data["response"]) > 0:
+            all_standings = data["response"][0]["league"]["standings"]
+            for conference in all_standings:
+                for team in conference:
+                    form_lookup[team["team"]["name"]] = team.get("form", "")
+        else:
+            print(f"No form data for season {season}, trying {season-1}...")
+            params["season"] = season - 1
+            response = requests.get(url, headers=headers, params=params)
+            data = response.json()
+            if data["response"] and len(data["response"]) > 0:
+                all_standings = data["response"][0]["league"]["standings"]
+                for conference in all_standings:
+                    for team in conference:
+                        form_lookup[team["team"]["name"]] = team.get("form", "")
+
+        print(f"Form lookup result: {form_lookup}")  # Debug
+        return form_lookup
+
+    except Exception as e:
+        print(f"Error fetching form data: {e}")
+        return {}
+
+
 def get_top_scorers(league_id, season=2027):
     """Fetch top scorers from API-Sports"""
     url = "https://v3.football.api-sports.io/players/topscorers"
@@ -173,17 +208,20 @@ def index():
             teams = json.load(json_data)
     except FileNotFoundError:
         teams = []
-        print("Warning: data/teams.json not found")
     except json.JSONDecodeError:
         teams = []
-        print("Warning: Invalid JSON in teams.json")
 
     team_lookup = {team["name"]: team["team_id"] for team in teams}
 
     fixtures_by_round = get_fixtures(98, season=2027)
+    form_lookup = get_team_form_lookup(98, season=2027)
 
     return render_template(
-        "index.html", teams=teams, fixtures=fixtures_by_round, team_lookup=team_lookup
+        "index.html",
+        teams=teams,
+        fixtures=fixtures_by_round,
+        team_lookup=team_lookup,
+        form_lookup=form_lookup,
     )
 
 
