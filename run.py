@@ -13,7 +13,7 @@ app = Flask(__name__)
 API_KEY = os.getenv("API_SPORTS_KEY")
 
 
-def get_fixtures(league_id, season=2026):
+def get_fixtures(league_id, season=2027):
     """Fetch fixtures from API-Sports"""
     url = "https://v3.football.api-sports.io/fixtures"
     headers = {"x-apisports-key": API_KEY}
@@ -40,7 +40,7 @@ def get_fixtures(league_id, season=2026):
         return None
 
 
-def get_top_scorers(league_id, season=2026):
+def get_top_scorers(league_id, season=2027):
     """Fetch top scorers from API-Sports"""
     url = "https://v3.football.api-sports.io/players/topscorers"
     headers = {"x-apisports-key": API_KEY}
@@ -60,7 +60,7 @@ def get_top_scorers(league_id, season=2026):
         return None
 
 
-def get_top_assists(league_id, season=2026):
+def get_top_assists(league_id, season=2027):
     """Fetch top assists from API-Sports"""
     url = "https://v3.football.api-sports.io/players/topassists"
     headers = {"x-apisports-key": API_KEY}
@@ -80,7 +80,7 @@ def get_top_assists(league_id, season=2026):
         return None
 
 
-def get_standings(league_id, season=2026):
+def get_standings(league_id, season=2027):
     """Fetch standings from API-Sports"""
     url = "https://v3.football.api-sports.io/standings"
     headers = {"x-apisports-key": API_KEY}
@@ -180,7 +180,7 @@ def index():
 
     team_lookup = {team["name"]: team["team_id"] for team in teams}
 
-    fixtures_by_round = get_fixtures(98, season=2026)
+    fixtures_by_round = get_fixtures(98, season=2027)
 
     return render_template(
         "index.html", teams=teams, fixtures=fixtures_by_round, team_lookup=team_lookup
@@ -236,8 +236,8 @@ def stats():
 
     team_lookup = {team["name"]: team["team_id"] for team in teams}
 
-    top_scorers = get_top_scorers(98, season=2026)
-    top_assists = get_top_assists(98, season=2026)
+    top_scorers = get_top_scorers(98, season=2027)
+    top_assists = get_top_assists(98, season=2027)
 
     return render_template(
         "stats.html",
@@ -259,7 +259,7 @@ def standings():
 
     team_lookup = {team["name"]: team["team_id"] for team in teams}
 
-    standings_data = get_standings(98, season=2026)
+    standings_data = get_standings(98, season=2027)
 
     return render_template(
         "standings.html", standings=standings_data, team_lookup=team_lookup

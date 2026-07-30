@@ -38,12 +38,12 @@
     <div class="info-card player-card">
         <h3>Key Player</h3>
         <p>{{ team.key_player }}</p>
-        <div class="player-image-placeholder">Image coming soon</div>
+        <img src="{{ url_for('static', filename=team.key_player_image.replace('static/', '')) }}" alt="image of {{ team.key_player }}" class="map-image">
     </div>
     <div class="info-card player-card">
         <h3>Famous Face</h3>
         <p>{{ team.famous_face }}</p>
-        <div class="player-image-placeholder">Image coming soon</div>
+        <img src="{{ url_for('static', filename=team.famous_face_image.replace('static/', '')) }}" alt="image of {{ team.famous_face }}" class="map-image">
         </div>
   </div>
 
