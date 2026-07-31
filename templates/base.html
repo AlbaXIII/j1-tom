@@ -1,81 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Sedgwick+Ave+Display&display=swap"
+        rel="stylesheet">
 
-        <link rel="stylesheet" href="/static/css/style.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-        <title>J1-TOM</title>
-    </head>
-    <body>
-        <button class="mobile-toggle" onclick="toggleSidebar()">
-            <i class="fas fa-bars"></i>
-        </button>
-        
-        <div class="overlay" onclick="toggleSidebar()"></div>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-        <nav class="sidebar" id="sidebar">
-            <ul class="sidebar-nav">
-                <li>
-                    <a href="{{ url_for('index') }}">
-                        <span>Matches</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url_for('teams') }}">
-                        <span>Teams</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url_for('stats') }}">
-                        <span>Stats</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url_for('standings') }}">
-                        <span>Standings</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url_for('blog') }}">
-                        <span>Blog</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url_for('about') }}">
-                        <span>About</span>
-                    </a>
-                </li>
-            </ul>
+    <title>J1-TOM</title>
+</head>
 
-            <div class="sidebar-footer">
-                <p>© AlbaDev 2025
-                    <a target="_blank" href="https://github.com/AlbaXIII" aria-label="developer github user profile">
-                            <i class="fab fa-github"></i>
-                    </a>
-                </p>
-            </div>
+<body>
+    <button class="mobile-toggle" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="overlay" onclick="toggleSidebar()"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <ul class="sidebar-nav">
+            <li>
+                <a href="{{ url_for('index') }}">
+                    <span>Matches</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('teams') }}">
+                    <span>Teams</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('stats') }}">
+                    <span>Stats</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('standings') }}">
+                    <span>Standings</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('blog') }}">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('about') }}">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <p>© AlbaDev 2025
+                <a target="_blank" href="https://github.com/AlbaXIII" aria-label="developer github user profile">
+                    <i class="fab fa-github"></i>
+                </a>
+            </p>
+        </div>
 
 
-        </nav>
+    </nav>
 
-            <div class="main-wrapper"></div>
-                <div class="content-wrapper">
-                    {% block content %}
-                    {% endblock %}
-                </div>
-            </div>
+    <div class="main-wrapper"></div>
+    <div class="content-wrapper">
+        {% block content %}
+        {% endblock %}
+    </div>
+    </div>
 
-            <script src="../static/js/script.js"></script>
-    </body>
+    <script src="../static/js/script.js"></script>
+</body>
+
 </html>

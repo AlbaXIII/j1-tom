@@ -161,23 +161,36 @@ body::before {
 
 .main-title {
   text-align: center;
+  font-family: "Sedgwick Ave Display", sans-serif;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.main-title-emphasis {
   font-family: "Dela Gothic One", sans-serif;
 }
 
-.main-title a {
+
+.main-title-button {
   text-decoration: none;
   color: #333;
+  margin-top: 25px;
+}
+
+.learn-more-button {
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1.8em;
+  color: #bc002d;
+}
+
+.learn-more-button:hover {
+  box-shadow:0 8px 16px 0 rgba(0,0,0,0.6)
 }
 
 .main-subtitle {
   font-family: "Dela Gothic One", sans-serif;
   text-align: center;
-}
-
-.main-video {
-  display: flex;
-  justify-content: center;
-  padding: 25px;
 }
 
 .main-select {
@@ -842,6 +855,17 @@ body::before {
 
 .back-link:hover {
   color: #bc002d;
+}
+
+/* blog */
+
+.blog-header {
+  text-align: center;
+  font-family: "Dela Gothic One", sans-serif; 
+}
+
+.posts-list {
+  font-family: "Sedgwick Ave Display", sans-serif;
 }
 
 /* mobile sidebar toggle */

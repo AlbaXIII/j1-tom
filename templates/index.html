@@ -1,12 +1,14 @@
 {% extends "base.html" %} {% block content %}
 <div class="main-image">
-  <img src="../static/img/hero/hero-image.png" alt="Main Hero Image" />
+  <img src="../static/img/hero/hero-image-resize.png" alt="Main Hero Image" />
 </div>
 <div class="main-title">
-  <h1>Japanese Football, simplified.</h1>
-  <a href="{{  url_for('about')  }}">
-    <h2>Learn More</h2>
-  </a>
+  <h1>Japanese Football, <strong class="main-title-emphasis">simplified.</strong></h1>
+  <div class="main-title-button">
+    <a href="{{  url_for('about')  }}">
+      <button class="learn-more-button">Learn More</button>
+    </a>
+  </div>
 </div>
 <br />
 <div class="main-subtitle">
@@ -26,7 +28,6 @@
 
 {% for round_name, matches in fixtures.items() %}
 <div class="matchday-section" data-matchday="{{ loop.index0 }}">
-  <h3 class="round-title">{{ round_name }}</h3>
 
   <div class="fixtures-container">
     {% for match in matches %}
