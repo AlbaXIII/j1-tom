@@ -688,6 +688,7 @@ body::before {
   position: relative;
   text-shadow: #2a2a2a;
   font-size: 2em;
+  -webkit-text-stroke: 2px black;
 }
 
 .team-item a:hover {
@@ -697,8 +698,17 @@ body::before {
 /* team detail page */
 
 .detail-headers {
-  font-family: "Dela Gothic One", sans-serif;
   text-align: center;
+  color: #fff;
+}
+
+.detail-headers h1 {
+  font-family:"Sedgwick Ave Display", sans-serif;
+  font-size: 3em;
+}
+
+.detail-headers h2 {
+  font-family: "Dela Gothic One", sans-serif;
 }
 
 .detail-badge {
@@ -726,13 +736,15 @@ body::before {
 .info-card h3 {
   color: #bc002d;
   margin: 0 0 15px 0;
-  font-size: 1.2em;
+  font-size: 1.5em;
+  font-family:"Sedgwick Ave Display", sans-serif;
 }
 
 .info-card p {
   margin: 0;
   color: #333;
-  font-size: 1.1em;
+  font-size: 1.3em;
+  font-family: "Vend Sans", sans-serif;
 }
 
 .map-card {
@@ -777,7 +789,8 @@ body::before {
 .info-card-full h3 {
   color: #bc002d;
   margin: 0 0 15px 0;
-  font-size: 1.2em;
+  font-size: 1.5em;
+  font-family:"Sedgwick Ave Display", sans-serif;
 }
 
 .highlight-stat {
@@ -798,8 +811,9 @@ body::before {
 .honours-card h3 {
   color: #bc002d;
   margin: 0 0 20px 0;
-  font-size: 1.4em;
   text-align: center;
+  font-size: 1.5em;
+  font-family:"Sedgwick Ave Display", sans-serif;
 }
 
 .honours-grid {

@@ -26,23 +26,23 @@
   <div class="info-row">
     <div class="info-card">
         <h3>Manager</h3>
-        <p>{{ team.manager }}</p>
+        <p><strong>{{ team.manager }}</strong></p>
     </div>
     <div class="info-card">
         <h3>Captain</h3>
-        <p>{{ team.captain }}</p>
+        <p><strong>{{ team.captain }}</strong></p>
     </div>
   </div>
 
   <div class="info-row">
     <div class="info-card player-card">
         <h3>Key Player</h3>
-        <p>{{ team.key_player }}</p>
+        <p><strong>{{ team.key_player }}</strong></p>
         <img src="{{ url_for('static', filename=team.key_player_image.replace('static/', '')) }}" alt="image of {{ team.key_player }}" class="map-image">
     </div>
     <div class="info-card player-card">
         <h3>Famous Face</h3>
-        <p>{{ team.famous_face }}</p>
+        <p><strong>{{ team.famous_face }}</strong></p>
         <img src="{{ url_for('static', filename=team.famous_face_image.replace('static/', '')) }}" alt="image of {{ team.famous_face }}" class="map-image">
         </div>
   </div>
