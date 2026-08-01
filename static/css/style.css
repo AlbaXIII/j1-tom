@@ -472,6 +472,15 @@ body::before {
 
 .stats-titles {
   text-align: center;
+  color: #fff
+}
+
+.stats-titles h1 {
+  font-family:"Sedgwick Ave Display", sans-serif;
+  font-size: 3em;
+}
+
+.stats-titles h2 {
   font-family: "Dela Gothic One", sans-serif;
 }
 
@@ -514,7 +523,16 @@ body::before {
 
 .standings-titles {
   text-align: center;
-  font-family: "Dela Gothic One", sans-serif; 
+  color: #fff
+}
+
+.standings-titles h1 {
+  font-family:"Sedgwick Ave Display", sans-serif;
+  font-size: 3em;
+}
+
+.standings-titles h2 {
+  font-family: "Dela Gothic One", sans-serif;
 }
 
 .table-container {
