@@ -919,13 +919,65 @@ body::before {
 
 /* blog */
 
-.blog-header {
+.blog-headers {
   text-align: center;
-  font-family: "Dela Gothic One", sans-serif; 
+  color: #fff;
+}
+
+.blog-headers h1 {
+  font-family:"Sedgwick Ave Display", sans-serif;
+  font-size: 4vw;
+}
+
+.blog-headers h2 {
+  font-family: "Dela Gothic One", sans-serif;
 }
 
 .posts-list {
   font-family: "Sedgwick Ave Display", sans-serif;
+}
+
+.posts-list a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.posts-list a:hover {
+  color: red;
+} 
+
+.posts-list h2 {
+  font-size: 2vw;
+}
+
+.posts-list p {
+  font-family: "Vend Sans", sans-serif;
+}
+
+.line-break {
+  margin: 15px;
+}
+
+/* blog posts */
+
+.blog-post {
+  color: #fff;
+}
+
+.blog-post h1 {
+  font-family: "Sedgwick Ave Display", sans-serif;
+  font-size: 3vw;
+}
+
+.blog-post p {
+  font-size: 1.3em;
+  text-decoration: none;
+}
+
+.back-link {
+  font-family: "Sedgwick Ave Display", sans-serif;
+  color: #fff;
+  font-size: 2vw;
 }
 
 /* mobile sidebar toggle */
