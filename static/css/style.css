@@ -116,24 +116,36 @@ body::before {
 
 /* about page */
 
-.about-headers {
+.about-container {
   text-align: center;
-  font-family: "Dela Gothic One", sans-serif;
+  color: #fff;
 }
 
+.about-headers {
+  text-align: center;
+  color: #fff;
+}
+
+.about-headers h1 {
+  font-family:"Sedgwick Ave Display", sans-serif;
+  font-size: 4vw;
+}
+
+.about-headers h2 {
+  font-family: "Dela Gothic One", sans-serif;
+}
 .about-subheader {
   text-align: center;
   font-family: "Vend Sans", sans-serif;
+  color: #fff;
+  font-family:"Sedgwick Ave Display", sans-serif;
 }
 
 .about-byline {
   text-align: center;
   font-family: "Dela Gothic One", sans-serif;
-  font-size: 1.2em;
-}
-
-.about-container {
-  text-align: center; 
+  font-size: 1.4em;
+  color: #fff;
 }
 
 .gif-container {
@@ -145,7 +157,6 @@ body::before {
   max-width: 50%;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   align-items: center;
 }
 
@@ -477,7 +488,7 @@ body::before {
 
 .stats-titles h1 {
   font-family:"Sedgwick Ave Display", sans-serif;
-  font-size: 3em;
+  font-size: 4vw;
 }
 
 .stats-titles h2 {
@@ -523,12 +534,12 @@ body::before {
 
 .standings-titles {
   text-align: center;
-  color: #fff
+  color: #fff;
 }
 
 .standings-titles h1 {
   font-family:"Sedgwick Ave Display", sans-serif;
-  font-size: 3em;
+  font-size: 4vw;
 }
 
 .standings-titles h2 {
@@ -668,8 +679,16 @@ body::before {
 
 .teams-header {
   text-align: center;
-  font-family: "Dela Gothic One", sans-serif;
   color: #fff;
+}
+
+.teams-header h1 {
+  font-family: "Sedgwick Ave Display", sans-serif;
+  font-size: 4vw;
+}
+
+.teams-header h2 {
+  font-family: "Dela Gothic One", sans-serif;
 }
 
 .teams-grid {
