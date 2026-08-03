@@ -1,12 +1,12 @@
 ---
 title: "3 J League prospects to watch out for in 2026/2027"
-date: 2026-07-31
+date: 2026-08-03
 author: AlbaXIII
 tags: [prospects, U21]
 ---
 
 The pipeline of talent from Japan to Europe has become one of the most exploited over the last couple of seasons, with clubs from all of Europe’s top 10 leagues and beyond realising the potential within the J League. This summer alone, over XX players have made the journey from J1 to tier 1 European teams such as RB Leipzig, Real Sociedad and Le Havre. So what better time to cast an eye over the future stars of Japanese football, sure to be featuring in Europe in the coming years – and in the process becoming ‘that guy’ amongst your friends who know them before they were megastars. Yes mate, saw him at Nagoya Grampus, knew he was mint.
-NB - For players to qualify for this list, they must be **21 or under before the start of the 2026/2027 J League** and have not been sneakily bought from under my nose when I started writing this article. Looking at you [Ryūnosuke Satō]( https://www.valenciacf.com/official-statement-ryunosuke-sato)
+NB - For players to qualify for this list, they must be **21 or under before the start of the 2026/2027 J League** and have not been sneakily bought from under my nose when I started writing this article. Looking at you [Ryūnosuke Satō]( https://www.valenciacf.com/official-statement-ryunosuke-sato).
 
 ![Yumeki Yokoyama celebrating](https://media.gettyimages.com/id/2238011427/photo/fbl-wc-u20-2025-chi-jpn.jpg?s=2048x2048&w=gi&k=20&c=T0WjAez1CbqILN2uQsCr2xM-gCKTneSMfW2d0gb3cl0=)
 
