@@ -291,6 +291,7 @@ img, iframe, table {
   flex: 1;
   gap: 15px;
   font-family: "Sedgwick Ave Display", sans-serif;
+  font-size: 1.5em;
 }
 
 .team-link {
@@ -964,10 +965,16 @@ img, iframe, table {
 .posts-list h2 {
   font-size: 3em;
   -webkit-text-stroke: 2px black;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .posts-list p {
   font-family: "Vend Sans", sans-serif;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .line-break {

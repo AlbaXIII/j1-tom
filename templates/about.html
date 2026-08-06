@@ -1,76 +1,79 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="container">
-        <div class="about-headers">
-            <h1>About</h1>
-            <h2>について</h2>
-        </div>
-        <div class="about-subheader">
-            <h2>J1-Tom - The home of English-language Japanese Football.</h2>
-        </div>
-        <div class="about-byline">
-            <p>J1 League - the highest level of football in Japan</p>
-            <p>Tomodachi (ともだち) -friend</p>
-        </div>
-        <div class="gif-container">
-            <img src="{{ url_for('static', filename='img/gif/verdy-fans-gif.gif') }}"
-                alt="J-League fans" 
-                class="about-gif">
-        </div>
-        <div class="about-container">
-            <div id="about-text">
-                <p>
-                    In August 2023, I finally managed to go on a bucket list trip to Japan for my honeymoon.
-                    As a lifelong football fan, I managed to talk my way into being able to head down to a J League game whilst
-                    staying with my cousin in Osaka. I didn't know much about the sport in Japan - I knew about the most famous exports,
-                    Hidetoshi Nakata and Shinsuke Nakamura in the 2000s, Kaoru Mitoma today, eternal round of 16 heartbreak at every World Cup -
-                    but in terms of how the game was consumed in Japan, I had no idea.
-                </p>
-            </div>
-        </div>
-        <div class="gif-container">
-            <img src="{{ url_for('static', filename='img/gif/osaka-gif.gif') }}" 
-                alt="J-League goal" 
-                class="about-gif">
-        </div>
-        <div class="about-container">
-            <div id="about-text">
-                <p>
-                    Now I've been lucky enough in my personal and work life to travel to many different countries,
-                    and sample the beautiful game all over the world. It used to be my job at the start of my career (in a roundabout way), and I've probably
-                    been able to watch football in more countries than the average fan. 
-                    What I saw that sweltering evening in Osaka left an impression that will last forever.
-                    The J League experience was one that instantly drew me in. The passion of the fans, the accessibility of the grounds, the interaction between
-                    team and the supporters, and the match-day 'event' were absolutely top drawer. Not to mention it was really cheap!
-                </p>
-            </div>
-        </div>
-        <div class="gif-container">
-            <img src="{{ url_for('static', filename='img/gif/verdy-banner-gif.gif') }}"
-                alt="J-League stadium" 
-                class="about-gif">
-        </div>
-        <div class="about-container">
-            <div id="about-text">
-                <p>
-                    Since then, I've been able to get back to Japan a couple more times and I've alway made time to check out the local J League team, and
-                    never once have I regretted it. However, it's not a particularly easy league to follow in Europe. So J1-Tom is my attempt to combing my 
-                    affection for Japanese football with my coding & writing hobbies, to make a casual place for curious fans to check out a hidden gem of a league. 
-                </p>
-            </div>
-        </div>
-        <div class="gif-container">
-            <img src="{{ url_for('static', filename='img/gif/verdy-stadium-gif.gif') }}"
-                alt="J-League stadium" 
-                class="about-gif">
-        </div>
-        <div class="about-container">
-            <div id="about-text">
-                    <p>
-                        NB - I am a hobbyist and not associated with the J1 League in any way (yet. Call me fellas.), and my opinions are mostly wrong and my own.
-                    </p>
-            </div>
-        </div>
-    <div>
-    
+
+<div class="about-headers">
+    <h1>About</h1>
+    <h2>について</h2>
+</div>
+<div class="about-subheader">
+    <h2>J1-Tom - The home of English-language Japanese Football.</h2>
+</div>
+<div class="about-byline">
+    <p>J1 League - the highest level of football in Japan</p>
+    <p>Tomodachi (ともだち) -friend</p>
+</div>
+<div class="gif-container">
+    <img src="{{ url_for('static', filename='img/gif/verdy-fans-gif.gif') }}" alt="J-League fans" class="about-gif">
+</div>
+<div class="about-container">
+    <div id="about-text">
+        <p>
+            In August 2023, I finally managed to go on a bucket list trip to Japan for my honeymoon.
+            As a lifelong football fan, I managed to talk my way into being able to head down to a J League game whilst
+            staying with my cousin in Osaka. I didn't know much about the sport in Japan - I knew about the most famous
+            exports,
+            Hidetoshi Nakata and Shinsuke Nakamura in the 2000s, Kaoru Mitoma today, eternal round of 16 heartbreak at
+            every World Cup -
+            but in terms of how the game was consumed in Japan, I had no idea.
+        </p>
+    </div>
+</div>
+<div class="gif-container">
+    <img src="{{ url_for('static', filename='img/gif/osaka-gif.gif') }}" alt="J-League goal" class="about-gif">
+</div>
+<div class="about-container">
+    <div id="about-text">
+        <p>
+            Now I've been lucky enough in my personal and work life to travel to many different countries,
+            and sample the beautiful game all over the world. It used to be my job at the start of my career (in a
+            roundabout way), and I've probably
+            been able to watch football in more countries than the average fan.
+            What I saw that sweltering evening in Osaka left an impression that will last forever.
+            The J League experience was one that instantly drew me in. The passion of the fans, the accessibility of the
+            grounds, the interaction between
+            team and the supporters, and the match-day 'event' were absolutely top drawer. Not to mention it was really
+            cheap!
+        </p>
+    </div>
+</div>
+<div class="gif-container">
+    <img src="{{ url_for('static', filename='img/gif/verdy-banner-gif.gif') }}" alt="J-League stadium"
+        class="about-gif">
+</div>
+<div class="about-container">
+    <div id="about-text">
+        <p>
+            Since then, I've been able to get back to Japan a couple more times and I've alway made time to check out
+            the local J League team, and
+            never once have I regretted it. However, it's not a particularly easy league to follow in Europe. So J1-Tom
+            is my attempt to combing my
+            affection for Japanese football with my coding & writing hobbies, to make a casual place for curious fans to
+            check out a hidden gem of a league.
+        </p>
+    </div>
+</div>
+<div class="gif-container">
+    <img src="{{ url_for('static', filename='img/gif/verdy-stadium-gif.gif') }}" alt="J-League stadium"
+        class="about-gif">
+</div>
+<div class="about-container">
+    <div id="about-text">
+        <p>
+            NB - I am a hobbyist and not associated with the J1 League in any way (yet. Call me fellas.), and my
+            opinions are mostly wrong and my own.
+        </p>
+    </div>
+</div>
+
+
 {% endblock %}
