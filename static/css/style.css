@@ -738,7 +738,7 @@ img, iframe, table {
   text-decoration: none;
   position: relative;
   text-shadow: #2a2a2a;
-  font-size: 2em;
+  font-size: 3rem;
   -webkit-text-stroke: 2px black;
 }
 
@@ -1116,7 +1116,7 @@ img, iframe, table {
   /* Team List */
 
   .team-item a {
-    font-size: 4.2em;
+    font-size: 3rem;
   }
 
   /* Standings */
