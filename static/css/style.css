@@ -30,6 +30,10 @@ body::before {
   z-index: -1;
 }
 
+img, iframe, table {
+  max-width: 100%;
+}
+
 /* sidebar styles */
 
 .sidebar {
@@ -105,7 +109,10 @@ body::before {
 .content-wrapper {
   flex: 1;
   padding: 40px;
-  background: #2a2a2a;
+  /*background: #2a2a2a;*/
+  background-color:rgba(0, 0, 0, 0.7);
+  overflow-x: hidden; /* Prevents wide content from sliding under sidebar */
+  box-sizing: border-box;
 }
 
 .page-container {
@@ -712,6 +719,8 @@ body::before {
   height: 100px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color:rgba(244, 67, 54, 0.5);
+  border-radius: 8px;
 }
 
 .team-item a {
