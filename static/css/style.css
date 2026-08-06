@@ -291,7 +291,7 @@ img, iframe, table {
   flex: 1;
   gap: 15px;
   font-family: "Sedgwick Ave Display", sans-serif;
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 .team-link {
@@ -497,7 +497,7 @@ img, iframe, table {
 
 .stats-titles h1 {
   font-family:"Sedgwick Ave Display", sans-serif;
-  font-size: 4vw;
+  font-size: 4em;
   color: #f44336;
 }
 
@@ -549,7 +549,7 @@ img, iframe, table {
 
 .standings-titles h1 {
   font-family:"Sedgwick Ave Display", sans-serif;
-  font-size: 4vw;
+  font-size: 4em;
   color: #f44336;
 }
 
@@ -695,7 +695,7 @@ img, iframe, table {
 
 .teams-header h1 {
   font-family: "Sedgwick Ave Display", sans-serif;
-  font-size: 4vw;
+  font-size: 4em;
   color: #f44336;
 }
 
