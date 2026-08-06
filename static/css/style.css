@@ -128,7 +128,8 @@ body::before {
 
 .about-headers h1 {
   font-family:"Sedgwick Ave Display", sans-serif;
-  font-size: 4vw;
+  font-size: 4em;
+  color: #f44336;
 }
 
 .about-headers h2 {
@@ -154,7 +155,7 @@ body::before {
 }
 
 .about-gif {
-  max-width: 50%;
+  max-width: 75%;
   height: auto;
   border-radius: 8px;
   align-items: center;
@@ -489,6 +490,7 @@ body::before {
 .stats-titles h1 {
   font-family:"Sedgwick Ave Display", sans-serif;
   font-size: 4vw;
+  color: #f44336;
 }
 
 .stats-titles h2 {
@@ -540,6 +542,7 @@ body::before {
 .standings-titles h1 {
   font-family:"Sedgwick Ave Display", sans-serif;
   font-size: 4vw;
+  color: #f44336;
 }
 
 .standings-titles h2 {
@@ -685,6 +688,7 @@ body::before {
 .teams-header h1 {
   font-family: "Sedgwick Ave Display", sans-serif;
   font-size: 4vw;
+  color: #f44336;
 }
 
 .teams-header h2 {
@@ -742,6 +746,7 @@ body::before {
 .detail-headers h1 {
   font-family:"Sedgwick Ave Display", sans-serif;
   font-size: 3em;
+  color: #f44336;
 }
 
 .detail-headers h2 {
@@ -926,7 +931,8 @@ body::before {
 
 .blog-headers h1 {
   font-family:"Sedgwick Ave Display", sans-serif;
-  font-size: 4vw;
+  font-size: 4em;
+  color: #f44336;
 }
 
 .blog-headers h2 {
@@ -947,7 +953,8 @@ body::before {
 } 
 
 .posts-list h2 {
-  font-size: 2vw;
+  font-size: 3em;
+  -webkit-text-stroke: 2px black;
 }
 
 .posts-list p {
@@ -966,12 +973,19 @@ body::before {
 
 .blog-post h1 {
   font-family: "Sedgwick Ave Display", sans-serif;
-  font-size: 3vw;
+  font-size: 4em;
+  color: #f44336;
 }
 
 .blog-post p {
   font-size: 1.3em;
   text-decoration: none;
+}
+
+.blog-post a {
+  font-family: "Sedgwick Ave Display", sans-serif;
+  text-decoration: none;
+  color: #f44336;
 }
 
 .post-content img {
@@ -1082,6 +1096,15 @@ body::before {
   .video-card iframe {
     height: 250px;
   }
+
+  /* Team List */
+
+  .team-item a {
+    font-size: 4.2em;
+  }
+
+  /* Standings */
+
     .table-container {
     padding: 10px;
   }
@@ -1104,6 +1127,19 @@ body::before {
   .rank {
     width: 40px;
   }
+
+  /* About */
+
+  .about-gif {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    align-items: center;
+  }
+
+
+
+
 }
 
 .overlay {
