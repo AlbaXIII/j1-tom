@@ -152,10 +152,10 @@
     "j_league_cups": "2019",
     "manager": "Shigetoshi Hasebe",
     "captain": "Yasuto Wakizaka, MF",
-    "key_player": "Erison, FW",
-    "key_player_image": "static/img/players/kawasaki_erison",
+    "key_player": "Svend Brodersen, GK",
+    "key_player_image": "static/img/players/kawasaki_brodersen.png",
     "famous_face": "Kaoru Mitoma (Brighton & Hove Albion)",
-    "famous_face_image":"static/img/players/kawasaki_mitoma",
+    "famous_face_image":"static/img/players/kawasaki_mitoma.png",
     "current_j1_seasons": "20",
     "video_url": "https://youtu.be/MD4wY4_skMY?si=PKjaEFFOXeKw3Tof"
   },
@@ -234,7 +234,7 @@
     "captain": "Ryuji Izumi, MF",
     "key_player": "Inagaki Sho, MF",
     "key_player_image": "static/img/players/nagoya_sho.png",
-    "famous_face": "Yukinari Sugawara (Werder Bremen)",
+    "famous_face": "Yukinari Sugawara (Southampton)",
     "famous_face_image":"static/img/players/nagoya_sugiwara.png",
     "current_j1_seasons": "8",
     "video_url": "https://youtu.be/aCATZx8K57E?si=C3t3BIwn2YTE9C-F"

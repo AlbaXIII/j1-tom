@@ -5,12 +5,12 @@ author: AlbaXIII
 tags: [preview, predictions]
 ---
 
-It’s that time of year again, where I expose that I actually know nothing about any of this by doing by best to predict the future in the form of my 2026/2027 final J1 League table. Read on to see how wrong/right I am!
+It’s that time of year again! Where I expose that I actually know nothing about any of this by doing by best to predict the future in the form of my predicted 2026/2027 final J1 League table. Read on to see how wrong/right I am!
 
 -
 
 ## **[Avispa Fukuoka](/team/1)**
-The *Hornets* have been busy in the transfer market, with the signings of Oriol Romeu and Keiya Shiihashi designed to shore up a porous midfield that had become a weakness during the 100 Year Vision League. Should have enough to aviod relegation.
+The *Hornets* have been busy in the transfer market, with the signings of Oriol Romeu and Keiya Shiihashi designed to shore up a porous midfield that had become a weakness during the 100 Year Vision League. Should have enough to avoid relegation.
 ### Predicted Finish - **16th**
 
 -
@@ -52,13 +52,13 @@ The Vision League was a marked step backwards for last season’s runners up. Ri
 -
 
 ## **[Kawasaki Frontale](/team/8)**
-Frontale are in a good position to kick on despite the loss of Erison to JEF United, and like the hydra, lose one Brazilian, three more will arrive in his place – Pedro Romano, Derik Lacerda and Kayke Queiroz had travelled the well-trodden path from the Série A to J1. It is debatable how much progress can be made in Kawasaki this year, but I envisage another strong season.
+Frontale are in a good position to kick on despite the loss of Erison to JEF United, and like the hydra, lose one Brazilian, three more will arrive in his place – Pedro Romano, Derik Lacerda and Kayke Queiroz had traveled the well-trodden path from the Série A to J1. It is debatable how much progress can be made in Kawasaki this year, but I envisage another strong season.
 ### Predicted Finish - **7th**
 
 -
 
 ## **[Machida Zelvia](/team/9)**
-Something seems to be brewing in Zelvia – and they are my outside shouts to be in the mix with the rest of the big clubs. My reasons for this are simple – Go Kuroda has built a strong squad with a number of matchwinners (Erik, Yūki Sōma) and a sense of momentum that has been present since their promotion in 2024. 
+Something seems to be brewing in Zelvia – and they are my outside shouts to be in the mix with the rest of the big clubs. My reasons for this are simple – Go Kuroda has built a strong squad with a number of match-winners (Erik, Yūki Sōma) and a sense of momentum that has been present since their promotion in 2024. 
 ### Predicted Finish - **6th**
 
 -
@@ -82,7 +82,7 @@ As with Kashiwa Reysol, the intermediary season was not kind to Kyoto and they s
 -
 
 ## **[Sanfrecce Hiroshima](/team/13)**
-I really like the look of Sanfrecce this season. Losing Michael Skibbe to Vissel Kobe was unplanned but they have gone like for like in the shape of fellow German Bartosch Gaul, and whilst this is only his second top-flight gig as manager, he has been working in the academy system of the evil empire of RB in Leipzig and has been instrumental in the development of a plethora of top-class talent in over the last few years – so the man has an eye for talent. The moves being made in the market look very canny – if Sebastien Haller is even half the player he was he will score 10+, Takuma Asano is a hero of Japanese Football and returns from Spain at only 32, and Takumu Kawamura was outstanding during his last stint in Hiroshima. My picks to run Kashima the closest.
+I really like the look of Sanfrecce this season. Losing Michael Skibbe to Vissel Kobe was unplanned but they have gone like for like in the shape of fellow German Bartosch Gaul. Whilst this is only his second top-flight gig as manager, he has been working in the academy system of the evil empire of RB in Leipzig and has been instrumental in the development of a plethora of top-class talent in over the last few years – so the man has an eye for talent. The moves being made in the market look very canny – if Sebastien Haller is even half the player he was he will score 10+, Takuma Asano is a hero of Japanese Football and returns from Spain at only 32, and Takumu Kawamura was outstanding during his last stint in Hiroshima. My picks to run Kashima the closest.
 ### Predicted Finish - **2nd**
 
 -
@@ -117,7 +117,7 @@ The last of our newly promoted trio, Nagasaki also had a rough time of it in the
 -
 
 ## **[Vissel Kobe](/team/19)**
-Disposed champions Vissel are on the warpath. Victory in the Vision League final over the Antlers will give them hope that the crown is theirs to take once again, and former Hiroshima boss Michael Skibbe proved a very clever appointment, already with a trophy in his hands. Anderson Lopes returning from Singapore should give the attack a huge boost and Kota Watanabe should strengthen the midfield but I think they will be pipped to the post this time around by Hiroshima and Kashima. It will be very close.
+Deposed champions Vissel are on the warpath. Victory in the Vision League final over the Antlers will give them hope that the crown is theirs to take once again, and former Hiroshima boss Michael Skibbe proved a very clever appointment, already with a trophy in his hands. Anderson Lopes returning from Singapore should give the attack a huge boost and Kota Watanabe should strengthen the midfield but I think they will be pipped to the post this time around by Hiroshima and Kashima. It will be very close.
 ### Predicted Finish - **3rd**
 
 -
