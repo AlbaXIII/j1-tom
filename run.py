@@ -23,11 +23,16 @@ def get_fixtures(league_id, season=2027):
         response = requests.get(url, headers=headers, params=params)
         data = response.json()
 
-        print(f"Fixtures API Response: {data}")
-
         if data["response"]:
             fixtures_by_round = {}
             for fixture in data["response"]:
+                # Only fetch events for finished matches
+                status = fixture["fixture"]["status"]["short"]
+                if status in ["FT", "AET", "PEN"]:
+                    fixture["events"] = get_fixture_events(fixture["fixture"]["id"])
+                else:
+                    fixture["events"] = []
+
                 round_name = fixture["league"]["round"]
                 if round_name not in fixtures_by_round:
                     fixtures_by_round[round_name] = []
@@ -38,6 +43,23 @@ def get_fixtures(league_id, season=2027):
     except Exception as e:
         print(f"Error fetching fixtures: {e}")
         return None
+
+
+def get_fixture_events(fixture_id):
+    """Fetch events (goals, cards, etc.) for a specific fixture"""
+    url = "https://v3.football.api-sports.io/fixtures/events"
+    headers = {"x-apisports-key": API_KEY}
+    params = {"fixture": fixture_id}
+
+    try:
+        response = requests.get(url, headers=headers, params=params)
+        data = response.json()
+        if data["response"]:
+            return data["response"]
+        return []
+    except Exception as e:
+        print(f"Error fetching events for fixture {fixture_id}: {e}")
+        return []
 
 
 def get_team_form_lookup(league_id, season=2027):

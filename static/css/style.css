@@ -475,8 +475,10 @@ img, iframe, table {
 
 .scorers-home,
 .scorers-away {
-  margin: 2px 0;
-  line-height: 1.4;
+  font-size: 0.8em;
+  color: #666;
+  line-height: 1.3;
+  font-family: "Vend Sans", sans-serif; 
 }
 
 .no-fixtures {

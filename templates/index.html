@@ -32,20 +32,42 @@
   <div class="fixtures-container">
     {% for match in matches %}
     <div class="fixture-card">
+      {% set home_scorers = [] %}
+      {% set away_scorers = [] %}
+      {% if match.events %}
+        {% for event in match.events %}
+          {% if event.type == 'Goal' and event.detail != 'Missed Penalty' %}
+            {% set scorer_label = event.player.name.split()[-1] + " " + event.time.elapsed|string + "'" %}
+            {% if event.detail == 'Penalty' %}
+              {% set scorer_label = scorer_label + " (pen)" %}
+            {% elif event.detail == 'Own Goal' %}
+              {% set scorer_label = scorer_label + " (OG)" %}
+            {% endif %}
+            {% if event.team.id == match.teams.home.id %}
+              {% set _ = home_scorers.append(scorer_label) %}
+            {% else %}
+              {% set _ = away_scorers.append(scorer_label) %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
       {% if match.teams.home.name in team_lookup %}
       <a href="{{ url_for('team_detail', team_id=team_lookup[match.teams.home.name]) }}"
         class="team home-team team-link">
         <div class="team-info-wrapper">
           <img src="{{ match.teams.home.logo }}" alt="{{ match.teams.home.name }}" class="team-badge">
           <div class="team-name-form">
-            <span class="team-name">{{ match.teams.home.name }}</span>
-            {% if match.teams.home.name in form_lookup and form_lookup[match.teams.home.name] %}
-            <div class="form-indicator">
-              {% for result in form_lookup[match.teams.home.name][-5:] %}
-              <span class="form-box form-{{ result }}">{{ result }}</span>
-              {% endfor %}
-            </div>
-            {% endif %}
+              <span class="team-name">{{ match.teams.home.name }}</span>
+              {% if home_scorers %}
+              <div class="scorers-home">{{ home_scorers|join(', ') }}</div>
+              {% endif %}
+              {% if match.teams.home.name in form_lookup and form_lookup[match.teams.home.name] %}
+              <div class="form-indicator">
+                {% for result in form_lookup[match.teams.home.name][-5:] %}
+                <span class="form-box form-{{ result }}">{{ result }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
           </div>
         </div>
       </a>
@@ -55,6 +77,9 @@
           <img src="{{ match.teams.home.logo }}" alt="{{ match.teams.home.name }}" class="team-badge">
           <div class="team-name-form">
             <span class="team-name">{{ match.teams.home.name }}</span>
+            {% if home_scorers %}
+            <div class="scorers-home">{{ home_scorers|join(', ') }}</div>
+            {% endif %}
             {% if match.teams.home.name in form_lookup and form_lookup[match.teams.home.name] %}
             <div class="form-indicator">
               {% for result in form_lookup[match.teams.home.name][-5:] %}
@@ -62,60 +87,27 @@
               {% endfor %}
             </div>
             {% endif %}
-          </div>
+        </div>
         </div>
       </div>
       {% endif %}
 
       <div class="match-center">
-        {% if match.fixture.status.short == 'FT' or match.fixture.status.short
-        == 'AET' or match.fixture.status.short == 'PEN' %}
+        {% if match.fixture.status.short == 'FT' %}
         <div class="score">
           <span class="score-number">{{ match.goals.home }}</span>
           <span class="score-separator">-</span>
           <span class="score-number">{{ match.goals.away }}</span>
         </div>
-        {% if match.score.penalty.home is not none and match.score.penalty.away
-        is not none %}
-        <div class="penalty-score">
-          ({{ match.score.penalty.home }} - {{ match.score.penalty.away }} pens)
-        </div>
-        {% endif %}
+        <div class="match-status finished">Full Time</div>
 
-        {% if match.events %}
-        <div class="goal-scorers">
-          {% set home_scorers = [] %}
-          {% set away_scorers = [] %}
-          {% for event in match.events %}
-          {% if event.type == 'Goal' and event.detail not in ['Penalty', 'Own Goal'] %}
-          {% if event.team.id == match.teams.home.id %}
-          {% set _ = home_scorers.append(event.player.name.split()[-1] + " " + event.time.elapsed|string + "'") %}
-          {% else %}
-          {% set _ = away_scorers.append(event.player.name.split()[-1] + " " + event.time.elapsed|string + "'") %}
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-          {% if home_scorers %}
-          <div class="scorers-home">{{ home_scorers|join(', ') }}</div>
-          {% endif %}
-          {% if away_scorers %}
-          <div class="scorers-away">{{ away_scorers|join(', ') }}</div>
-          {% endif %}
-        </div>
-        {% endif %}
-
-        <div class="match-status finished">
-          {% if match.fixture.status.short == 'PEN' %} Penalties {% elif
-          match.fixture.status.short == 'AET' %} After Extra Time {% else %}
-          Full Time {% endif %}
-        </div>
         {% elif match.fixture.status.short == 'NS' %}
         <div class="versus">VS</div>
         <div class="match-status upcoming">
-          {{ match.fixture.date[8:10] }}/{{ match.fixture.date[5:7] }}/{{
-          match.fixture.date[:4] }}
+          {{ match.fixture.date[8:10] }}/{{ match.fixture.date[5:7] }}/{{ match.fixture.date[:4] }}
         </div>
         <div class="match-time">{{ match.fixture.date[11:16] }}</div>
+
         {% elif match.fixture.status.short in ['1H', '2H', 'HT'] %}
         <div class="score live">
           <span class="score-number">{{ match.goals.home }}</span>
@@ -126,6 +118,7 @@
           <span class="live-dot"></span>
           LIVE {{ match.fixture.status.elapsed }}'
         </div>
+
         {% else %}
         <div class="match-status">{{ match.fixture.status.long }}</div>
         {% endif %}
@@ -136,14 +129,17 @@
         class="team away-team team-link">
         <div class="team-info-wrapper">
           <div class="team-name-form">
-            <span class="team-name">{{ match.teams.away.name }}</span>
-            {% if match.teams.away.name in form_lookup and form_lookup[match.teams.away.name] %}
-            <div class="form-indicator">
-              {% for result in form_lookup[match.teams.away.name][-5:] %}
-              <span class="form-box form-{{ result }}">{{ result }}</span>
-              {% endfor %}
-            </div>
-            {% endif %}
+              <span class="team-name">{{ match.teams.away.name }}</span>
+              {% if away_scorers %}
+              <div class="scorers-away">{{ away_scorers|join(', ') }}</div>
+              {% endif %}
+              {% if match.teams.away.name in form_lookup and form_lookup[match.teams.away.name] %}
+              <div class="form-indicator">
+                {% for result in form_lookup[match.teams.away.name][-5:] %}
+                <span class="form-box form-{{ result }}">{{ result }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
           </div>
           <img src="{{ match.teams.away.logo }}" alt="{{ match.teams.away.name }}" class="team-badge">
         </div>
@@ -152,14 +148,17 @@
       <div class="team away-team">
         <div class="team-info-wrapper">
           <div class="team-name-form">
-            <span class="team-name">{{ match.teams.away.name }}</span>
-            {% if match.teams.away.name in form_lookup and form_lookup[match.teams.away.name] %}
-            <div class="form-indicator">
-              {% for result in form_lookup[match.teams.away.name][-5:] %}
-              <span class="form-box form-{{ result }}">{{ result }}</span>
-              {% endfor %}
-            </div>
-            {% endif %}
+              <span class="team-name">{{ match.teams.away.name }}</span>
+              {% if away_scorers %}
+              <div class="scorers-away">{{ away_scorers|join(', ') }}</div>
+              {% endif %}
+              {% if match.teams.away.name in form_lookup and form_lookup[match.teams.away.name] %}
+              <div class="form-indicator">
+                {% for result in form_lookup[match.teams.away.name][-5:] %}
+                <span class="form-box form-{{ result }}">{{ result }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
           </div>
           <img src="{{ match.teams.away.logo }}" alt="{{ match.teams.away.name }}" class="team-badge">
         </div>
