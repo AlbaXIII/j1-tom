@@ -1006,9 +1006,14 @@ img, iframe, table {
   color: #f44336;
 }
 
+.blog-post h2, h3 {
+  font-family: "Sedgwick Ave Display", sans-serif;
+}
+
 .blog-post p {
   font-size: 1.3em;
   text-decoration: none;
+  font-family: "Vend Sans", sans-serif;
 }
 
 .blog-post a {
