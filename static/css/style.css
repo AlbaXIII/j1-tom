@@ -204,6 +204,24 @@ img, iframe, table {
   margin-top: 25px;
 }
 
+.main-title-youtube h2 {
+  margin-top: 25px;
+  color: #fff;
+}
+
+.main-title-youtube a {
+  text-decoration: none;
+}
+
+.main-title-youtube {
+  text-decoration: none;
+}
+
+
+.main-title-youtube i {
+  color: #bc002d;
+}
+
 .learn-more-button {
   border-radius: 8px;
   padding: 10px 24px;
