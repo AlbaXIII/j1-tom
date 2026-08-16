@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 import requests
 import json
+from pathlib import Path
 from flask import Flask, render_template
 import frontmatter
 import markdown
@@ -11,6 +12,9 @@ load_dotenv()
 
 app = Flask(__name__)
 API_KEY = os.getenv("API_SPORTS_KEY")
+
+EVENTS_CACHE_DIR = Path("data/events_cache")
+EVENTS_CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def get_fixtures(league_id, season=2027):
@@ -26,7 +30,6 @@ def get_fixtures(league_id, season=2027):
         if data["response"]:
             fixtures_by_round = {}
             for fixture in data["response"]:
-                # Only fetch events for finished matches
                 status = fixture["fixture"]["status"]["short"]
                 if status in ["FT", "AET", "PEN"]:
                     fixture["events"] = get_fixture_events(fixture["fixture"]["id"])
@@ -38,15 +41,48 @@ def get_fixtures(league_id, season=2027):
                     fixtures_by_round[round_name] = []
                 fixtures_by_round[round_name].append(fixture)
 
-            return fixtures_by_round
-        return None
+            # Sort rounds by their earliest fixture date, regardless of API response order
+            def round_sort_key(round_name):
+                dates = [m["fixture"]["date"] for m in fixtures_by_round[round_name]]
+                return min(dates)
+
+            sorted_round_names = sorted(fixtures_by_round.keys(), key=round_sort_key)
+
+            # Rebuild the dict in guaranteed chronological order
+            fixtures_by_round = {
+                name: fixtures_by_round[name] for name in sorted_round_names
+            }
+
+            # Work out which round should be shown by default
+            default_round_index = 0
+
+            for i, round_name in enumerate(sorted_round_names):
+                matches = fixtures_by_round[round_name]
+                statuses = [m["fixture"]["status"]["short"] for m in matches]
+
+                if any(s in ["NS", "1H", "2H", "HT"] for s in statuses):
+                    default_round_index = i
+                    break
+                else:
+                    default_round_index = i
+
+            return fixtures_by_round, default_round_index
+        return None, 0
     except Exception as e:
         print(f"Error fetching fixtures: {e}")
-        return None
+        return None, 0
 
 
 def get_fixture_events(fixture_id):
-    """Fetch events (goals, cards, etc.) for a specific fixture"""
+    """Fetch events for a fixture, using local cache to avoid repeat API calls"""
+    cache_file = EVENTS_CACHE_DIR / f"{fixture_id}.json"
+
+    # Return cached version if it exists
+    if cache_file.exists():
+        with open(cache_file, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+    # Otherwise, fetch from API and cache the result
     url = "https://v3.football.api-sports.io/fixtures/events"
     headers = {"x-apisports-key": API_KEY}
     params = {"fixture": fixture_id}
@@ -54,9 +90,12 @@ def get_fixture_events(fixture_id):
     try:
         response = requests.get(url, headers=headers, params=params)
         data = response.json()
-        if data["response"]:
-            return data["response"]
-        return []
+        events = data["response"] if data["response"] else []
+
+        with open(cache_file, "w", encoding="utf-8") as f:
+            json.dump(events, f)
+
+        return events
     except Exception as e:
         print(f"Error fetching events for fixture {fixture_id}: {e}")
         return []
@@ -235,7 +274,7 @@ def index():
 
     team_lookup = {team["name"]: team["team_id"] for team in teams}
 
-    fixtures_by_round = get_fixtures(98, season=2027)
+    fixtures_by_round, default_round_index = get_fixtures(98, season=2027)
     form_lookup = get_team_form_lookup(98, season=2027)
 
     return render_template(
@@ -244,6 +283,7 @@ def index():
         fixtures=fixtures_by_round,
         team_lookup=team_lookup,
         form_lookup=form_lookup,
+        default_round_index=default_round_index,
     )
 
 
