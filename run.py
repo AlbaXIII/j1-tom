@@ -41,19 +41,16 @@ def get_fixtures(league_id, season=2027):
                     fixtures_by_round[round_name] = []
                 fixtures_by_round[round_name].append(fixture)
 
-            # Sort rounds by their earliest fixture date, regardless of API response order
             def round_sort_key(round_name):
                 dates = [m["fixture"]["date"] for m in fixtures_by_round[round_name]]
                 return min(dates)
 
             sorted_round_names = sorted(fixtures_by_round.keys(), key=round_sort_key)
 
-            # Rebuild the dict in guaranteed chronological order
             fixtures_by_round = {
                 name: fixtures_by_round[name] for name in sorted_round_names
             }
 
-            # Work out which round should be shown by default
             default_round_index = 0
 
             for i, round_name in enumerate(sorted_round_names):
@@ -77,12 +74,10 @@ def get_fixture_events(fixture_id):
     """Fetch events for a fixture, using local cache to avoid repeat API calls"""
     cache_file = EVENTS_CACHE_DIR / f"{fixture_id}.json"
 
-    # Return cached version if it exists
     if cache_file.exists():
         with open(cache_file, "r", encoding="utf-8") as f:
             return json.load(f)
 
-    # Otherwise, fetch from API and cache the result
     url = "https://v3.football.api-sports.io/fixtures/events"
     headers = {"x-apisports-key": API_KEY}
     params = {"fixture": fixture_id}
