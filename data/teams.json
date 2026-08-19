@@ -222,7 +222,7 @@
   {
     "team_id": "12",
     "name": "Nagoya Grampus",
-    "badge": "static/img/badge/Nagoya_Grampus_logo.png",
+    "badge": "static/img/badge/Nagoya_Grampus_logo_new.png",
     "nickname": "Grampus",
     "ground": "Toyota Stadium - Capacity 42,753",
     "map": "static/img/maps/map-nagoya.webp",
@@ -282,7 +282,7 @@
   {
     "team_id": "15",
     "name": "FC Tokyo",
-    "badge": "static/img/badge/FC_Tokyo_logo.png",
+    "badge": "static/img/badge/FC_Tokyo_logo_new.png",
     "nickname": "Gas",
     "ground": "Ajinomoto Stadium - Capacity 47,851",
     "map": "static/img/maps/map-tokyo.webp",
