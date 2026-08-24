@@ -2,7 +2,8 @@
 <div>
   <div class="detail-headers">
     <h1>{{ team.name }}</h1>
-    <h2>"{{ team.nickname }}"</h2>
+    <h2><i>"{{ team.nickname }}"</i></h2>
+    <h2>Founded {{team.founded}}</h2>
     <img
       src="{{ url_for('static', filename=team.badge.replace('static/', '')) }}"
       alt="{{ team.name }} badge"
