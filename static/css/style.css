@@ -763,8 +763,9 @@ img, iframe, table {
   height: 100px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  background-color:rgba(244, 67, 54, 0.5);
+  background-color: #333;
   border-radius: 8px;
+  outline: solid #fff;
 }
 
 .team-item a {
