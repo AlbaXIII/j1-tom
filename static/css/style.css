@@ -944,6 +944,88 @@ img, iframe, table {
   line-height: 1.6;
 }
 
+.results-row,
+.positions-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-family: "Vend Sans", sans-serif;
+}
+
+.result-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 90px;
+  padding: 12px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.result-box {
+  width: 32px;
+  height: 32px;
+  font-size: 1em;
+  border-radius: 6px;
+}
+
+.result-badge {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.result-score {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.result-meta {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.position-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 90px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border-top: 4px solid #bc002d;
+}
+
+.position-item.champion {
+  border-top-color: #d4a017;
+  background: #fff8e1;
+}
+
+.position-season {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.position-rank {
+  font-family: "Sedgwick Ave Display", sans-serif;
+  font-size: 2.5em;
+  color: #bc002d;
+  line-height: 1;
+}
+
+.position-item.champion .position-rank {
+  color: #d4a017;
+}
+
+.no-data {
+  color: #666;
+  font-style: italic;
+}
+
 .video-card {
   background: white;
   padding: 25px;

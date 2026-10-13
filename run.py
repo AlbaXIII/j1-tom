@@ -15,6 +15,8 @@ API_KEY = os.getenv("API_SPORTS_KEY")
 
 EVENTS_CACHE_DIR = Path("data/events_cache")
 EVENTS_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+POSITIONS_CACHE_DIR = Path("data/positions_cache")
+POSITIONS_CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def get_fixtures(league_id, season=2027):
@@ -71,7 +73,6 @@ def get_fixtures(league_id, season=2027):
 
 
 def get_fixture_events(fixture_id):
-    """Fetch events for a fixture, using local cache to avoid repeat API calls"""
     cache_file = EVENTS_CACHE_DIR / f"{fixture_id}.json"
 
     if cache_file.exists():
@@ -129,6 +130,91 @@ def get_team_form_lookup(league_id, season=2027):
     except Exception as e:
         print(f"Error fetching form data: {e}")
         return {}
+
+
+def get_last_five_results(api_team_id):
+    url = "https://v3.football.api-sports.io/fixtures"
+    headers = {"x-apisports-key": API_KEY}
+    params = {"team": api_team_id, "league": 98, "last": 5} 
+
+    try:
+        response = requests.get(url, headers=headers, params=params)
+        data = response.json()
+
+        results = []
+        for f in data.get("response", []):
+            is_home = f["teams"]["home"]["id"] == api_team_id
+            opponent = f["teams"]["away"] if is_home else f["teams"]["home"]
+            goals_for = f["goals"]["home"] if is_home else f["goals"]["away"]
+            goals_against = f["goals"]["away"] if is_home else f["goals"]["home"]
+
+            if goals_for is None or goals_against is None:
+                continue
+
+            if goals_for > goals_against:
+                result = "W"
+            elif goals_for == goals_against:
+                result = "D"
+            else:
+                result = "L"
+
+            results.append({
+                "result": result,
+                "opponent": opponent["name"],
+                "opponent_logo": opponent["logo"],
+                "score": f"{goals_for} - {goals_against}",
+                "venue": "H" if is_home else "A",
+                "date": datetime.fromisoformat(f["fixture"]["date"]).strftime("%d %b"),
+                "timestamp": f["fixture"]["timestamp"],
+            })
+
+        # Oldest on the left, newest on the right (same convention as form guides)
+        results.sort(key=lambda r: r["timestamp"])
+        return results
+    except Exception as e:
+        print(f"Error fetching last 5 results: {e}")
+        return []
+
+
+def get_last_five_positions(api_team_id, current_season=2027):
+    url = "https://v3.football.api-sports.io/standings"
+    headers = {"x-apisports-key": API_KEY}
+    positions = []
+
+    for season in range(current_season - 5, current_season):
+        cache_file = POSITIONS_CACHE_DIR / f"{api_team_id}_{season}.json"
+
+        if cache_file.exists():
+            with open(cache_file, "r", encoding="utf-8") as f:
+                rank = json.load(f)
+        else:
+            params = {"league": 98, "season": season, "team": api_team_id}
+            try:
+                response = requests.get(url, headers=headers, params=params)
+                data = response.json()
+
+                # Don't cache failures (rate limits, plan restrictions, etc.)
+                if data.get("errors"):
+                    print(f"API error for season {season}: {data['errors']}")
+                    continue
+
+                rank = None
+                if data["response"]:
+                    for group in data["response"][0]["league"]["standings"]:
+                        for team in group:
+                            if team["team"]["id"] == api_team_id:
+                                rank = team["rank"]
+
+                with open(cache_file, "w", encoding="utf-8") as f:
+                    json.dump(rank, f)
+            except Exception as e:
+                print(f"Error fetching position for season {season}: {e}")
+                continue
+
+        if rank is not None:
+            positions.append({"season": season, "rank": rank})
+
+    return positions
 
 
 def get_top_scorers(league_id, season=2027):
@@ -312,7 +398,14 @@ def team_detail(team_id):
         team = next((t for t in teams if int(t["team_id"]) == team_id), None)
 
         if team:
-            return render_template("team_detail.html", team=team)
+            last_five_results = get_last_five_results(team["api_team_id"])
+            last_five_positions = get_last_five_positions(team["api_team_id"])
+            return render_template(
+                "team_detail.html",
+                team=team,
+                last_five_results=last_five_results,
+                last_five_positions=last_five_positions,
+            )
         else:
             return "Team not found", 404
     except FileNotFoundError:
