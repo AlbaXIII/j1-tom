@@ -192,11 +192,19 @@ img, iframe, table {
   color: #fff;
 }
 
+.main-title a {
+  text-decoration: none;
+}
+
+.main-title a:hover {
+  text-decoration: underline;
+  color: #bc002d;
+}
+
 .main-title-emphasis {
   font-family: "Dela Gothic One", sans-serif;
   color: #bc002d;
 }
-
 
 .main-title-button {
   text-decoration: none;
@@ -237,6 +245,10 @@ img, iframe, table {
   font-family: "Dela Gothic One", sans-serif;
   text-align: center;
   color: #fff;
+}
+
+.main-subtitle h2 {
+  font-size: 2.8rem;
 }
 
 .main-select {
