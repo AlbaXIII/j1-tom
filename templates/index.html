@@ -85,7 +85,7 @@
             {% endif %}
             {% if match.teams.home.name in form_lookup and form_lookup[match.teams.home.name] %}
             <div class="form-indicator">
-              {% for result in form_lookup[match.teams.home.name][-5:] %}
+              {% for result in form_lookup[match.teams.home.name][-5:]|reverse %}
               <span class="form-box form-{{ result }}">{{ result }}</span>
               {% endfor %}
             </div>
@@ -107,7 +107,7 @@
             {% endif %}
             {% if match.teams.home.name in form_lookup and form_lookup[match.teams.home.name] %}
             <div class="form-indicator">
-              {% for result in form_lookup[match.teams.home.name][-5:] %}
+              {% for result in form_lookup[match.teams.home.name][-5:]|reverse %}
               <span class="form-box form-{{ result }}">{{ result }}</span>
               {% endfor %}
             </div>
@@ -167,7 +167,7 @@
             {% endif %}
             {% if match.teams.away.name in form_lookup and form_lookup[match.teams.away.name] %}
             <div class="form-indicator">
-              {% for result in form_lookup[match.teams.away.name][-5:] %}
+              {% for result in form_lookup[match.teams.away.name][-5:]|reverse %}
               <span class="form-box form-{{ result }}">{{ result }}</span>
               {% endfor %}
             </div>
@@ -189,7 +189,7 @@
             {% endif %}
             {% if match.teams.away.name in form_lookup and form_lookup[match.teams.away.name] %}
             <div class="form-indicator">
-              {% for result in form_lookup[match.teams.away.name][-5:] %}
+              {% for result in form_lookup[match.teams.away.name][-5:]|reverse %}
               <span class="form-box form-{{ result }}">{{ result }}</span>
               {% endfor %}
             </div>

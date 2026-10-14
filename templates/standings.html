@@ -57,6 +57,15 @@
                 <td class="stats">{{ team.all.goals.against }}</td>
                 <td class="stats">{{ team.goalsDiff }}</td>
                 <td class="points">{{ team.points }}</td>
+                <td class="form">
+                    {% if team.form %}
+                    <div class="form-indicator">
+                        {% for result in team.form[-5:]|reverse %}
+                        <span class="form-box form-{{ result }}">{{ result }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </td>
             </tr>
             {% endfor %}
         </tbody>

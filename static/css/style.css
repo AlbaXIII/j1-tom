@@ -469,6 +469,7 @@ img, iframe, table {
 .form-indicator {
   display: flex;
   gap: 3px;
+  font-family: "Vend Sans", sans-serif;
 }
 
 .form-box {
@@ -717,6 +718,14 @@ img, iframe, table {
   background-color: #f9f9f9;
   font-size: 1.1em;
   color: #bc002d;
+}
+
+.form {
+  width: 150px;
+}
+
+.form .form-indicator {
+  justify-content: center;
 }
 
 .error-message {
@@ -1273,6 +1282,10 @@ img, iframe, table {
 
   .rank {
     width: 40px;
+  }
+
+  .form-col {
+    display: none;
   }
 
   /* About */
