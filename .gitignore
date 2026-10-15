@@ -1,1 +1,3 @@
 .env
+data/events_cache/
+data/positions_cache/

@@ -6,7 +6,7 @@ from pathlib import Path
 from flask import Flask, render_template
 import frontmatter
 import markdown
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 load_dotenv()
 
@@ -53,6 +53,11 @@ def get_fixtures(league_id, season=2027):
                 name: fixtures_by_round[name] for name in sorted_round_names
             }
 
+            RESULTS_BUFFER = timedelta(hours=48)
+            MATCH_LENGTH = timedelta(hours=2)
+            FINISHED = ["FT", "AET", "PEN"]
+            now = datetime.now(timezone.utc)
+
             default_round_index = 0
 
             for i, round_name in enumerate(sorted_round_names):
@@ -62,8 +67,19 @@ def get_fixtures(league_id, season=2027):
                 if any(s in ["NS", "1H", "2H", "HT"] for s in statuses):
                     default_round_index = i
                     break
-                else:
-                    default_round_index = i
+
+                finished_kickoffs = [
+                    datetime.fromisoformat(m["fixture"]["date"])
+                    for m in matches
+                    if m["fixture"]["status"]["short"] in FINISHED
+                ]
+                if finished_kickoffs:
+                    last_kickoff = max(finished_kickoffs)
+                    if now < last_kickoff + MATCH_LENGTH + RESULTS_BUFFER:
+                        default_round_index = i
+                        break
+
+                default_round_index = i
 
             return fixtures_by_round, default_round_index
         return None, 0
