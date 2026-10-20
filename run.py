@@ -151,7 +151,7 @@ def get_team_form_lookup(league_id, season=2027):
 def get_last_five_results(api_team_id):
     url = "https://v3.football.api-sports.io/fixtures"
     headers = {"x-apisports-key": API_KEY}
-    params = {"team": api_team_id, "league": 98, "last": 5} 
+    params = {"team": api_team_id, "league": 98, "last": 5}
 
     try:
         response = requests.get(url, headers=headers, params=params)
@@ -174,15 +174,19 @@ def get_last_five_results(api_team_id):
             else:
                 result = "L"
 
-            results.append({
-                "result": result,
-                "opponent": opponent["name"],
-                "opponent_logo": opponent["logo"],
-                "score": f"{goals_for} - {goals_against}",
-                "venue": "H" if is_home else "A",
-                "date": datetime.fromisoformat(f["fixture"]["date"]).strftime("%d %b"),
-                "timestamp": f["fixture"]["timestamp"],
-            })
+            results.append(
+                {
+                    "result": result,
+                    "opponent": opponent["name"],
+                    "opponent_logo": opponent["logo"],
+                    "score": f"{goals_for} - {goals_against}",
+                    "venue": "H" if is_home else "A",
+                    "date": datetime.fromisoformat(f["fixture"]["date"]).strftime(
+                        "%d %b"
+                    ),
+                    "timestamp": f["fixture"]["timestamp"],
+                }
+            )
 
         # Oldest on the left, newest on the right (same convention as form guides)
         results.sort(key=lambda r: r["timestamp"])
@@ -330,6 +334,9 @@ def get_all_posts():
                     "tags": post.get("tags", []),
                     "excerpt": post.get("excerpt", ""),
                     "content": post.content,
+                    "image": post.get("image"),
+                    "image_alt": post.get("image_alt", ""),
+                    "image_credit": post.get("image_credit", ""),
                 }
             )
 
@@ -354,6 +361,9 @@ def get_post_by_slug(slug):
         "author": post.get("author", "Unknown"),
         "tags": post.get("tags", []),
         "content": html_content,
+        "image": post.get("image"),
+        "image_alt": post.get("image_alt", ""),
+        "image_credit": post.get("image_credit", ""),
     }
 
 

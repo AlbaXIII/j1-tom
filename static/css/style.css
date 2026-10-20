@@ -1095,7 +1095,27 @@ img, iframe, table {
 
 .posts-list a:hover {
   color: red;
-} 
+}
+
+.post-hero {
+  margin: 20px 0;
+}
+
+.post-hero img {
+  border-radius: 8px;
+}
+
+.post-hero figcaption {
+  font-family: "Vend Sans", sans-serif;
+  font-size: 0.8em;
+  color: #ccc;
+  text-align: right;
+  margin-top: 5px;
+}
+
+.post-thumb {
+  border-radius: 8px;
+}
 
 .posts-list h2 {
   font-size: 3em;

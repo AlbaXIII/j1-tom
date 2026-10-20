@@ -3,6 +3,10 @@ title: "The Big 2026/2027 Prediction Table"
 date: 2026-08-05
 author: AlbaXIII
 tags: [preview, predictions]
+image: "https://seeklogo.com/vector-logo/434732/j1-league"
+image_alt: "Test Image"
+image_credit: "Test Image"
+
 ---
 
 It’s that time of year again! Where I expose that I actually know nothing about any of this by doing by best to predict the future in the form of my predicted 2026/2027 final J1 League table. Read on to see how wrong/right I am!

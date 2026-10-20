@@ -1,13 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-    <article class="blog-post">
-        <h1>{{ post.title }}</h1>
-        <p class="post-meta">{{ post.date.strftime('%B %d, %Y') }} · {{ post.author }}</p>
-        
-        <div class="post-content">
-            {{ post.content|safe }}
-        </div>
-        
-        <a href="{{ url_for('blog') }}" class="back-link">← Back to Blog</a>
-    </article>
+<article class="blog-post">
+    <h1>{{ post.title }}</h1>
+
+    {% if post.image %}
+    <figure class="post-hero">
+        <img src="{{ post.image }}" alt="{{ post.image_alt or post.title }}">
+        {% if post.image_credit %}
+        <figcaption>{{ post.image_credit }}</figcaption>
+        {% endif %}
+    </figure>
+    {% endif %}
+    <p class="post-meta">{{ post.date.strftime('%B %d, %Y') }} · {{ post.author }}</p>
+
+    <div class="post-content">
+        {{ post.content|safe }}
+    </div>
+
+    <a href="{{ url_for('blog') }}" class="back-link">← Back to Blog</a>
+</article>
 {% endblock %}

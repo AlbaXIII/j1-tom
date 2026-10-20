@@ -3,6 +3,10 @@ title: "3 J League prospects to watch out for in 2026/2027"
 date: 2026-08-03
 author: AlbaXIII
 tags: [prospects, U21]
+image: "https://seeklogo.com/vector-logo/434732/j1-league"
+image_alt: "Test Image"
+image_credit: "Test Image"
+
 ---
 
 The pipeline of talent from Japan to Europe has become one of the most exploited over the last couple of seasons, with clubs from all of Europe’s top 10 leagues and beyond realising the potential within the J League. This summer alone, players have made the journey from J1 to tier 1 European teams such as RB Leipzig, Real Sociedad and Le Havre. So what better time to cast an eye over the future stars of Japanese football, sure to be featuring in Europe in the coming years – and in the process becoming ‘that guy’ amongst your friends who know them before they were megastars. Yes mate, saw him at Nagoya Grampus, knew he was mint.

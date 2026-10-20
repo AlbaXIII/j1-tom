@@ -3,6 +3,10 @@ title: "3 J1 League Transfers to watch out for in 2026/2027"
 date: 2026-07-31
 author: AlbaXIII
 tags: [transfers]
+image: "https://seeklogo.com/vector-logo/434732/j1-league"
+image_alt: "Test Image"
+image_credit: "Test Image"
+
 ---
 
 With the dust now settled from the one-off J1 100 Year Vision League, the top tier of Japanese football prepares to kick off the first year of the new J1 calendar – the very first time that the season has coincided with those of the European leagues. Now, J1 clubs have been able to have that extra layer of squad-building security in their transfer dealings, immune to having their best players plucked out mid-season by Royal Antwerp (miss you [Tsunashima](https://www.youtube.com/watch?v=pAEvkgDVxEE)) - here are a few of the most intriguing transfers made so far this summer.
