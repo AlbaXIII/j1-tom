@@ -337,6 +337,9 @@ def get_all_posts():
                     "image": post.get("image"),
                     "image_alt": post.get("image_alt", ""),
                     "image_credit": post.get("image_credit", ""),
+                    "sub_image": post.get("sub_image"),
+                    "sub_image_alt": post.get("sub_image_alt", ""),
+                    "sub_image_credit": post.get("sub_image_credit", ""),
                 }
             )
 
@@ -364,6 +367,9 @@ def get_post_by_slug(slug):
         "image": post.get("image"),
         "image_alt": post.get("image_alt", ""),
         "image_credit": post.get("image_credit", ""),
+        "sub_image": post.get("sub_image"),
+        "sub_image_alt": post.get("sub_image_alt", ""),
+        "sub_image_credit": post.get("sub_image_credit", ""),
     }
 
 

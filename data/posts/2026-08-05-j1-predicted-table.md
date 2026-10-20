@@ -3,10 +3,9 @@ title: "The Big 2026/2027 Prediction Table"
 date: 2026-08-05
 author: AlbaXIII
 tags: [preview, predictions]
-image: "https://seeklogo.com/vector-logo/434732/j1-league"
-image_alt: "Test Image"
-image_credit: "Test Image"
-
+image: "https://media.gettyimages.com/id/2288202563/photo/j-league-kickoff-event.jpg?s=2048x2048&w=gi&k=20&c=v4QTUKEwFgy2C0dILvFYL4QUlshfOUjJE4LEMY52iqU="
+image_alt: "Players from J-League football teams pose for a photo at an event in Tokyo on Aug. 3, 2026, ahead of the start of the new season on Aug. 7. The J-League switched to an August-to-June season from the conventional February-to-December schedule, corresponding with the schedule of major European leagues."
+image_credit: "Getty Images"
 ---
 
 It’s that time of year again! Where I expose that I actually know nothing about any of this by doing by best to predict the future in the form of my predicted 2026/2027 final J1 League table. Read on to see how wrong/right I am!

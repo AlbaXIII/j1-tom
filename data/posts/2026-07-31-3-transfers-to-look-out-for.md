@@ -3,10 +3,9 @@ title: "3 J1 League Transfers to watch out for in 2026/2027"
 date: 2026-07-31
 author: AlbaXIII
 tags: [transfers]
-image: "https://seeklogo.com/vector-logo/434732/j1-league"
-image_alt: "Test Image"
-image_credit: "Test Image"
-
+image: "https://media.gettyimages.com/id/2276544359/photo/levante-ud-v-rcd-mallorca-laliga-ea-sports-2025-2026.jpg?s=2048x2048&w=gi&k=20&c=Yly_0l7CvGkXNJ7TUTndE9JcYqSCPSi_76zhlhL2B7M="
+image_alt: "Takuma Asano of RCD Mallorca looks on during the LaLiga EA Sports match between Levante UD and RCD Mallorca at Ciudad de Valencia on May 17, 2026 in Valencia, Spain. "
+image_credit: "Getty Images"
 ---
 
 With the dust now settled from the one-off J1 100 Year Vision League, the top tier of Japanese football prepares to kick off the first year of the new J1 calendar – the very first time that the season has coincided with those of the European leagues. Now, J1 clubs have been able to have that extra layer of squad-building security in their transfer dealings, immune to having their best players plucked out mid-season by Royal Antwerp (miss you [Tsunashima](https://www.youtube.com/watch?v=pAEvkgDVxEE)) - here are a few of the most intriguing transfers made so far this summer.

@@ -6,7 +6,7 @@
 </div>
 
 <div class="posts-list">
-    <br class="line-break">
+    <hr class="line-break">
     {% for post in posts %}
     <a href="{{ url_for('blog_post', slug=post.slug) }}" class="post-card">
         {% if post.image %}
@@ -15,7 +15,7 @@
         <h2>{{ post.title }}</h2>
         <p class="post-meta">{{ post.date.strftime('%B %d, %Y') }} · {{ post.author }}</p>
     </a>
-    <br class="line-break">
+    <hr class="line-break">
     {% endfor %}
 </div>
 {% endblock %}

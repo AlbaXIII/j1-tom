@@ -1115,6 +1115,9 @@ img, iframe, table {
 
 .post-thumb {
   border-radius: 8px;
+  height: 400px;
+  width: auto;
+  margin-bottom: 10px;
 }
 
 .posts-list h2 {
@@ -1133,7 +1136,8 @@ img, iframe, table {
 }
 
 .line-break {
-  margin: 15px;
+  margin: 25px;
+  border: 1px solid #fff
 }
 
 /* blog posts */
@@ -1158,6 +1162,11 @@ img, iframe, table {
   font-family: "Vend Sans", sans-serif;
 }
 
+.blog-post p strong {
+  font-family: "Sedgwick Ave Display", sans-serif;
+  font-size: 1.4em;
+}
+
 .blog-post a {
   font-family: "Sedgwick Ave Display", sans-serif;
   text-decoration: none;
@@ -1165,7 +1174,6 @@ img, iframe, table {
 }
 
 .post-content img {
-  max-width: 100%;
   height: auto;
   display: block;
   margin: 20px auto;

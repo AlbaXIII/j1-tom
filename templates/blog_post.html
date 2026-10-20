@@ -3,11 +3,11 @@
 <article class="blog-post">
     <h1>{{ post.title }}</h1>
 
-    {% if post.image %}
+    {% if post.sub_image %}
     <figure class="post-hero">
-        <img src="{{ post.image }}" alt="{{ post.image_alt or post.title }}">
-        {% if post.image_credit %}
-        <figcaption>{{ post.image_credit }}</figcaption>
+        <img src="{{ post.sub_image }}" alt="{{ post.sub_image_alt or post.title }}">
+        {% if post.sub_image_credit %}
+        <figcaption>{{ post.sub_image_alt }}</figcaption>
         {% endif %}
     </figure>
     {% endif %}

@@ -3,9 +3,9 @@ title: "3 J League prospects to watch out for in 2026/2027"
 date: 2026-08-03
 author: AlbaXIII
 tags: [prospects, U21]
-image: "https://seeklogo.com/vector-logo/434732/j1-league"
-image_alt: "Test Image"
-image_credit: "Test Image"
+image: "https://media.gettyimages.com/id/2274118478/photo/kyoto-sanga-f-c-v-shimizu-s-pulse-j-league-meiji-yasuda-j1-100-year-vision-league.jpg?s=2048x2048&w=gi&k=20&c=NeQELVUkpEwpkq93NBAx48gz_i919PUJX9fArgVywxI="
+image_alt: "#47 SHIMAMOTO Yudai of Shimizu S-Pulse celebrates scoring his side's second goal during the J.LEAGUE MEIJI YASUDA J1 100 YEAR VISION LEAGUE 14th Sec. match between Kyoto Sanga F.C. and Shimizu S-Pulse at SANGA STADIUM by Kuyocera on May 02, 2026 in Kameoka, Kyoto, Japan."
+image_credit: "Getty Images"
 
 ---
 
