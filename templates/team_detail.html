@@ -7,12 +7,51 @@
         <img src="{{ url_for('static', filename=team.badge.replace('static/', '')) }}" alt="{{ team.name }} badge"
             class="detail-badge" />
     </div>
+
+    <div class="info-card-full">
+        <h3>In a sentence</h3>
+        <p>{{ team.summary }}</p>
+    </div>
+
+    <div class="info-card-full">
+        <h3>Last 5 Results</h3>
+        {% if last_five_results %}
+        <div class="results-row">
+            {% for r in last_five_results %}
+            <div class="result-item">
+                <span class="form-box form-{{ r.result }} result-box">{{ r.result }}</span>
+                <img src="{{ r.opponent_logo }}" alt="{{ r.opponent }}" class="result-badge">
+                <span class="result-score">{{ r.score }}</span>
+                <span class="result-meta">{{ r.venue }} · {{ r.date }}</span>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="no-data">No recent results available.</p>
+        {% endif %}
+    </div>
+
+    <div class="info-card-full">
+        <h3>J1 League Finish Last 5 Seasons</h3>
+        {% if last_five_positions %}
+        <div class="positions-row">
+            {% for p in last_five_positions %}
+            <div class="position-item {% if p.rank == 1 %}champion{% endif %}">
+                <span class="position-season">{{ p.season }}</span>
+                <span class="position-rank">{{ p.rank }}</span>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="no-data">No league history available.</p>
+        {% endif %}
+    </div>
     <div class="info-row">
         <div class="info-card">
             <h3>Stadium</h3>
             <p>{{ team.ground }}</p>
-            {% if team.kit %}
-            <img src="{{ url_for('static', filename=team.kit.replace('static/', '')) }}" alt="{{ team.name }} kit"
+            {% if team.home_kit %}
+            <img src="{{ url_for('static', filename=team.home_kit.replace('static/', '')) }}" alt="{{ team.name }} kit"
                 class="kit-image">
             {% endif %}
         </div>
@@ -90,43 +129,9 @@
         </div>
     </div>
 
-    <div class="info-card-full">
-        <h3>Last 5 Results</h3>
-        {% if last_five_results %}
-        <div class="results-row">
-            {% for r in last_five_results %}
-            <div class="result-item">
-                <span class="form-box form-{{ r.result }} result-box">{{ r.result }}</span>
-                <img src="{{ r.opponent_logo }}" alt="{{ r.opponent }}" class="result-badge">
-                <span class="result-score">{{ r.score }}</span>
-                <span class="result-meta">{{ r.venue }} · {{ r.date }}</span>
-            </div>
-            {% endfor %}
-        </div>
-        {% else %}
-        <p class="no-data">No recent results available.</p>
-        {% endif %}
-    </div>
-
-    <div class="info-card-full">
-        <h3>J1 League Finish Last 5 Seasons</h3>
-        {% if last_five_positions %}
-        <div class="positions-row">
-            {% for p in last_five_positions %}
-            <div class="position-item {% if p.rank == 1 %}champion{% endif %}">
-                <span class="position-season">{{ p.season }}</span>
-                <span class="position-rank">{{ p.rank }}</span>
-            </div>
-            {% endfor %}
-        </div>
-        {% else %}
-        <p class="no-data">No league history available.</p>
-        {% endif %}
-    </div>
-
     {% if team.video_url %}
     <div class="video-card">
-        <h3>About</h3>
+        <h3>Learn More</h3>
         <iframe width="100%" height="400"
             src="{{ team.video_url.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0] }}" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -1292,6 +1292,15 @@ img, iframe, table {
     font-size: 2.8rem;
   }
 
+  /* Blog */
+
+  .post-thumb {
+  border-radius: 8px;
+  margin-bottom: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
   /* Standings */
 
     .table-container {
